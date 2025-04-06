@@ -3,7 +3,7 @@ import { NavBar } from "./NavBar";
 
 export const Home = () => {
   return (
-    <div className="absolute inset-0 -z-20 bg-gradient-to-br from-blue-400 via-orange-200 to-red-300 text-neutral-800">
+    <div className="absolute inset-0 -z-20 bg-gradient-to-br from-blue-400 via-orange-200 to-red-300">
       <div className="bg-hero"></div>
       <NavBar />
       <div className="flex flex-col justify-center items-center font-georgia mt-20">
