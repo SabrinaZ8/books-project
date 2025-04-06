@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
-h1 {
-    @apply text-red-700
+@theme {
+    --color-paleturquoise: #b3E5FC;
+    --color-goldenrod: #FFA726;
+    --color-orangered: #FF5722;
+    --color-gainsboro: #E0E0E0;
+    --color-dimgray: #546E7A;
+    --font-georgia: Georgia
+}
+
+.bg-hero {
+    @apply bg-[url(./assets/svgs/meusvg.svg)] w-screen h-screen bg-contain bg-right bg-fixed bg-no-repeat absolute inset-0 -z-10 opacity-80
+
 }
