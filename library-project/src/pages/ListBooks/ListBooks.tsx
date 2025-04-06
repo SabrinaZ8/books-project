@@ -2,7 +2,7 @@ import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BookSearch } from "../../components/BookSearch";
-import { NavBar } from "../Home/NavBar";
+import { NavBar } from "../../components/NavBar";
 
 interface Book {
   id: string;
