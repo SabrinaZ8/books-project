@@ -12,9 +12,9 @@ export const BookSearch = () => {
   }
 
   return (
-    <div className="flex mt-14 w-1/2 justify-center flex-col items-center">
-      <form onSubmit={(e) => onSubmit(e)} className="flex w-4/5 justify-center">
-        <select className="bg-orangered text-white rounded-sm">
+    <div className="flex mt-14 w-11/12 md:w-3/4 xl:w-1/2 justify-center flex-col items-center">
+      <form onSubmit={(e) => onSubmit(e)} className="flex w-full justify-center">
+        <select className="bg-orangered text-white rounded-sm px-2">
           <option value="Drama">Drama</option>
         </select>
         <input
@@ -22,14 +22,14 @@ export const BookSearch = () => {
           name="book-search"
           value={inputSearch}
           onChange={(e) => setInputSearch(e.target.value)}
-          className="bg-white rounded-sm w-2/3 py-4 px-2 mx-3"
+          className="bg-white rounded-sm w-full 2xl:w-[600px] py-4 px-2 mx-3"
         />
         <button
           type="submit"
           aria-label="Procurar livros"
-          className="bg-orangered p-2 rounded-sm"
+          className="bg-orangered px-4 rounded-sm"
         >
-          <IoSearch className="text-white" />
+          <IoSearch className="text-white w-7 h-7" />
         </button>
       </form>
     </div>
