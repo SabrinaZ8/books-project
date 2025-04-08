@@ -13,7 +13,7 @@ export const BookSearch = () => {
 
   return (
     <div className="flex mt-14 w-1/2 justify-center flex-col items-center">
-      <form onSubmit={(e) => onSubmit(e)} className="flex w-4/5 ">
+      <form onSubmit={(e) => onSubmit(e)} className="flex w-4/5 justify-center">
         <select className="bg-orangered text-white rounded-sm">
           <option value="Drama">Drama</option>
         </select>
@@ -22,7 +22,7 @@ export const BookSearch = () => {
           name="book-search"
           value={inputSearch}
           onChange={(e) => setInputSearch(e.target.value)}
-          className="bg-white rounded-sm w-4/5 px-2 mx-3"
+          className="bg-white rounded-sm w-2/3 py-4 px-2 mx-3"
         />
         <button
           type="submit"
