@@ -20,13 +20,13 @@ export const ShowCase = () => {
 
   function nextArrow() {
     if(translate <= 1296) {
-    setTranslate(prev => prev + 648)
+    setTranslate(prev => prev + 1098)
     console.log("Clicou no nextArrow", translate);
     }
   }
   function previousArrow() {
     if(translate >= 0) {
-    setTranslate(prev => prev - 648)
+    setTranslate(prev => prev - 1098)
     }
   }
 
@@ -49,7 +49,7 @@ export const ShowCase = () => {
 
   return (
     <div className="flex justify-center relative">
-      <div className="flex justify-start w-[648px] overflow-y-hidden">
+      <div className="flex justify-start w-[1098px] overflow-y-hidden">
         <div className="absolute z-10 inset-0 flex justify-between items-center">
           <SlArrowLeft className="translate-x-72" onClick={previousArrow}/>
           <SlArrowRight className="-translate-x-72" onClick={nextArrow}/>
@@ -59,13 +59,13 @@ export const ShowCase = () => {
           {books.map((book) => (
             <div
               key={book.id}
-              className=" p-2 cursor-pointer transition-bg duration-300 w-[200px] h-[360px] mx-2"
+              className=" p-2 cursor-pointer transition-bg duration-300 w-[350px] h-[550px] mx-2"
             >
               {book.volumeInfo.imageLinks?.thumbnail && (
                 <img
-                  src={book.volumeInfo.imageLinks.thumbnail}
+                  src={book.volumeInfo.imageLinks.thumbnail?.replace("zoom=1", "zoom=2")}
                   alt={book.volumeInfo.title}
-                  className="shadow-md/70 w-[200px] h-[300px] object-cover"	
+                  className="shadow-md/70 w-[350px] h-[500px] object-cover"	
                 />
               )}
               <h3 className="font-semibold">{book.volumeInfo.title}</h3>
