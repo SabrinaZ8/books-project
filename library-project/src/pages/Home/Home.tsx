@@ -8,7 +8,7 @@ export const Home = () => {
       <div className="bg-hero"></div>
       <NavBar />
       <section className="flex flex-col justify-center items-center font-georgia h-[70%]">
-        <h1 className="text-5xl md:text-6xl">buscador de livros</h1>
+        <h1 className="text-[40px] sm:text-5xl md:text-6xl">buscador de livros</h1>
         <p className="text-xl md:text-2xl">procure por livros, autores, categorias</p>
         <BookSearch />
       </section>
