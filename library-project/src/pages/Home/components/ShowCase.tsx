@@ -2,17 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
-
-interface Book {
-  id: string;
-  volumeInfo: {
-    title: string;
-    authors?: string[];
-    imageLinks?: {
-      thumbnail: string;
-    };
-  };
-}
+import { Book } from "../../../types";
 
 export const ShowCase = () => {
   const [books, setBooks] = useState<Book[]>([]);

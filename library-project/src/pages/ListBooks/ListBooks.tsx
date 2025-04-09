@@ -3,17 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BookSearch } from "../../components/BookSearch";
 import { NavBar } from "../../components/NavBar";
+import { Book } from "../../types";	
 
-interface Book {
-  id: string;
-  volumeInfo: {
-    title: string;
-    authors?: string[];
-    imageLinks?: {
-      thumbnail: string;
-    };
-  };
-}
 
 export const ListBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
