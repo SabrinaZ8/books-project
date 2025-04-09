@@ -1,5 +1,6 @@
 import { BookSearch } from "../../components/BookSearch";
 import { NavBar } from "../../components/NavBar";
+import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
 
 export const Home = () => {
@@ -14,6 +15,10 @@ export const Home = () => {
       </section>
       <section>
         <ShowCase />
+      </section>
+      <section className="flex flex-col justify-center h-[300px] lg:h-[400px] my-20 lg:my-40">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl text-center font-semibold">Encontre por categoria</h2>
+        <FindCategory />
       </section>
     </div>
   );

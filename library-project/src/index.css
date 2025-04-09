@@ -11,5 +11,9 @@
 
 .bg-hero {
     @apply bg-[url(./assets/svgs/meusvg.svg)] w-screen h-screen bg-contain bg-right bg-fixed bg-no-repeat absolute inset-0 -z-10 opacity-80
+}
 
+.find-category {
+    @apply bg-gradient-to-br from-yellow-500 to-red-400 mx-1 sm:mx-2 lg:mx-5 p-1 sm:p-4 min-w-28 w-[25%] h-[30%] lg:h-[70%] flex justify-center items-center 
+    rounded-lg shadow-lg text-base lg:text-2xl font-bold text-white text-shadow-lg/40 
 }
