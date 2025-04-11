@@ -9,11 +9,15 @@ export const ShowCase = () => {
   const [translate, setTranslate] = useState(0);
 
   function nextArrow() {
-    if(translate <= 1296) {
+    const amountToShow = 3
+    const translateMax: number = (books.length / amountToShow * 1098) - 1098
+    
+    if(translate >= translateMax) { //2196
     setTranslate(prev => prev + 1098)
     console.log("Clicou no nextArrow", translate);
     }
   }
+
   function previousArrow() {
     if(translate >= 0) {
     setTranslate(prev => prev - 1098)
@@ -24,7 +28,7 @@ export const ShowCase = () => {
     const fetchBooks = async () => {
       try {
         const response = await axios.get(
-          `https://openlibrary.org/search.json?q=harry`
+          `https://openlibrary.org/search.json?q=harry&limit=12`
         );
         console.log(response);
         setBooks(response.data.docs);
