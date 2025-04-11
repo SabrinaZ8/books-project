@@ -1,10 +1,6 @@
 export interface Book {
-    id: string;
-    volumeInfo: {
-      title: string;
-      authors?: string[];
-      imageLinks?: {
-        thumbnail: string;
-      };
-    };
-  }
+  cover_edition_key: string;
+  title: string;
+  author_name: string[];
+  cover_i: number;
+}

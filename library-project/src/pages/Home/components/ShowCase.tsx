@@ -24,12 +24,10 @@ export const ShowCase = () => {
     const fetchBooks = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=bestsellers&key=${
-            import.meta.env.VITE_GOOGLE_BOOKS_API
-          }`
+          `https://openlibrary.org/search.json?q=harry`
         );
-        console.log(response.data.items);
-        setBooks(response.data.items);
+        console.log(response);
+        setBooks(response.data.docs);
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
       }
@@ -48,18 +46,16 @@ export const ShowCase = () => {
          style={{ transform: `translateX(-${translate}px)` }}>
           {books.map((book) => (
             <div
-              key={book.id}
+              key={book.cover_edition_key}
               className=" p-2 cursor-pointer transition-bg duration-300 w-[350px] h-[550px] mx-2"
             >
-              {book.volumeInfo.imageLinks?.thumbnail && (
                 <img
-                  src={book.volumeInfo.imageLinks.thumbnail?.replace("zoom=1", "zoom=2")}
-                  alt={book.volumeInfo.title}
+                  src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                  alt={book.title}
                   className="shadow-md/70 w-[350px] h-[500px] object-cover"	
                 />
-              )}
-              <h3 className="font-semibold">{book.volumeInfo.title}</h3>
-              <p className="text-sm">{book.volumeInfo.authors?.join(", ")}</p>
+              <h3 className="font-semibold">{book.title}</h3>
+              <p className="text-sm">{book.author_name}</p>
             </div>
           ))}
         </div>
