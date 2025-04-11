@@ -16,9 +16,12 @@ export const Home = () => {
       <section>
         <ShowCase />
       </section>
-      <section className="flex flex-col justify-center h-[300px] lg:h-[400px] my-20 lg:my-40">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl text-center font-semibold">Encontre por categoria</h2>
+      <section className="section-style h-[300px] lg:h-[400px] ">
+        <h2 className="title-h2">Encontre por categoria</h2>
         <FindCategory />
+      </section>
+      <section className="section-style px-4">
+        <h2 className="title-h2">Books for children</h2>
       </section>
     </div>
   );
