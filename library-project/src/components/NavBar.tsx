@@ -3,7 +3,7 @@ import { BiSolidBookHeart } from "react-icons/bi";
 
 export const NavBar = () => {
   return (
-    <nav className="flex w-full justify-between p-10">
+    <nav className="flex w-full justify-between p-10 h-[105px] bg-darkslategray text-white">
       <div>
         <i>Logo</i>
       </div>

@@ -1,19 +1,34 @@
 import { BookSearch } from "../../components/BookSearch";
 import { NavBar } from "../../components/NavBar";
+import { BooksChildren } from "./components/BooksChildren";
 import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
 
 export const Home = () => {
   return (
-    <div className="absolute inset-0 -z-20 bg-gradient-to-br from-blue-400 via-orange-200 to-red-300">
-      <div className="bg-hero"></div>
+    <div className="bg-[url()] bg-no-repeat bg-contain">
       <NavBar />
-      <section className="flex flex-col justify-center items-center font-georgia h-[70%]">
-        <h1 className="text-[40px] sm:text-5xl md:text-6xl">buscador de livros</h1>
-        <p className="text-xl md:text-2xl">procure por livros, autores, categorias</p>
-        <BookSearch />
+
+      <section className="h-[calc(100vh-105px)] bg-no-repeat bg-cover bg-[url(https://cdn.pixabay.com/photo/2021/06/24/11/18/background-6360866_1280.png)]">
+        <div className="relative flex flex-col justify-center items-center h-full ">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold">
+            buscador de livros
+          </h1>
+          <p className="text-xl md:text-2xl">
+            procure por livros, autores, categorias
+          </p>
+          <BookSearch />
+          <div className="absolute bottom-4 right-4 bg-contain">
+            <img
+              src="../../../src/assets/background/teste.png"
+              alt=""
+              className="min-w-80 min-h-80 h-80 w-80 object-contain"
+            />
+          </div>
+        </div>
       </section>
-      <section>
+
+      <section className="">
         <ShowCase />
       </section>
       <section className="section-style h-[300px] lg:h-[400px] ">
@@ -21,7 +36,7 @@ export const Home = () => {
         <FindCategory />
       </section>
       <section className="section-style px-4">
-        <h2 className="title-h2">Books for children</h2>
+        <BooksChildren />
       </section>
     </div>
   );

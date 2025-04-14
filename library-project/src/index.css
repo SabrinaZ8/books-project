@@ -6,7 +6,15 @@
     --color-orangered: #FF5722;
     --color-gainsboro: #E0E0E0;
     --color-dimgray: #546E7A;
-    --font-georgia: Georgia
+
+    --font-georgia: Georgia;
+    --font-lora: "Lora", serif;
+    --font-playfair: "Playfair", serif;
+
+    --color-sandybrown: #FCBF6B;
+    --color-darkgray: #A9AD94;
+    --color-darkslategray: #42302E;
+    --color-wheat: #F6DAAB
 }
 
 .bg-hero {
@@ -14,7 +22,7 @@
 }
 
 .find-category {
-    @apply bg-gradient-to-br from-yellow-500 to-red-400 mr-1 sm:mr-2 lg:mr-5 p-1 sm:p-4 min-w-28 w-[25%] h-[30%] lg:h-[70%] flex justify-center items-center 
+    @apply bg-darkgray  mr-1 sm:mr-2 lg:mr-5 p-1 sm:p-4 min-w-28 w-[25%] h-[30%] lg:h-[70%] flex justify-center items-center 
     rounded-lg shadow-lg text-base lg:text-2xl font-bold text-white text-shadow-lg/40 
 }
 
@@ -23,5 +31,9 @@
 }
 
 .section-style {
-    @apply flex flex-col justify-center my-20 lg:my-40 p-0 lg:p-10 m-2 lg:m-5
+    @apply flex flex-col justify-center p-0 lg:p-10 m-2 lg:m-5
+}
+
+.arrows-show-more {
+    @apply bg-paleturquoise text-dimgray w-10 h-10 p-2 mx-2
 }
