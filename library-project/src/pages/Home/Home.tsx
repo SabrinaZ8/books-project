@@ -3,6 +3,8 @@ import { NavBar } from "../../components/NavBar";
 import { BooksChildren } from "./components/BooksChildren";
 import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
+import { TopAuthor } from "./components/TopAuthor";
+import { TopBooks } from "./components/TopBooks";
 
 export const Home = () => {
   return (
@@ -37,6 +39,10 @@ export const Home = () => {
       </section>
       <section className="section-style px-4">
         <BooksChildren />
+      </section>
+      <section className="flex my-10 mx-40">
+        <TopBooks />
+        <TopAuthor />
       </section>
     </div>
   );

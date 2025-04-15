@@ -27,7 +27,7 @@
 }
 
 .title-h2 {
-    @apply text-3xl sm:text-4xl md:text-5xl text-start font-semibold
+    @apply text-3xl sm:text-4xl md:text-5xl text-start font-semibold font-playfair
 }
 
 .section-style {
