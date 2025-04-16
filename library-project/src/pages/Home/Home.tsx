@@ -1,5 +1,6 @@
 import { BookSearch } from "../../components/BookSearch";
 import { NavBar } from "../../components/NavBar";
+import { About } from "./components/About";
 import { BooksChildren } from "./components/BooksChildren";
 import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
@@ -43,6 +44,9 @@ export const Home = () => {
       <section className="flex my-10 mx-40">
         <TopBooks />
         <TopAuthor />
+      </section>
+      <section>
+        <About />
       </section>
     </div>
   );
