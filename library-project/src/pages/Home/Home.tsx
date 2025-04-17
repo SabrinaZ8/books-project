@@ -1,4 +1,5 @@
 import { BookSearch } from "../../components/BookSearch";
+import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 import { About } from "./components/About";
 import { BooksChildren } from "./components/BooksChildren";
@@ -6,6 +7,7 @@ import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
 import { TopAuthor } from "./components/TopAuthor";
 import { TopBooks } from "./components/TopBooks";
+import svg from "../../assets/svgs/wavesOpacity.svg"
 
 export const Home = () => {
   return (
@@ -48,6 +50,8 @@ export const Home = () => {
       <section>
         <About />
       </section>
+      <img src={svg} alt="" className="w-full bg-wheat rotate-180 object-cover" />
+      <Footer />
     </div>
   );
 };
