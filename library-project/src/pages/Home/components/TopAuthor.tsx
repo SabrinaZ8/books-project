@@ -29,22 +29,21 @@ export const TopAuthor = () => {
     fetchAuthors();
   }, []);
 
-console.log(authors)
   return (
-    <div className="h-1/2 bg-wheat p-10 rounded-lg">
+    <div className="h-1/2 bg-wheat p-10 rounded-lg w-full xl:w-[30%]">
       <div>
         <h2 className="title-h2">Top Autores</h2>
       </div>
-      <div className="grid grid-rows-3 grid-cols-1 gap-4 my-10 items-center">
+      <div className="flex flex-col lg:flex-row xl:flex-col my-10 items-start gap-4">
         {authors
           .map((author) => (
             <div
-              className={`flex justify-start items-center p-2 cursor-pointer  bg-white hover:bg-gainsboro transition-bg duration-300`}
+              className={`flex justify-start items-center p-2 cursor-pointer max-xl:w-[400px] w-full  bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <div className="flex items-center fle mr-4">
                 <img
                   src={`https://covers.openlibrary.org/a/olid/${author.key.replace('/authors/', '')}-M.jpg`}
-                  className={`w-[200px] h-[200px] min-w-[200px] object-cover`}
+                  className={`w-[150px] h-[150px] min-w-[150px] object-cover`}
                 />
               </div>
               <div>
