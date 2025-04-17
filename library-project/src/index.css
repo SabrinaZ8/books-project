@@ -37,3 +37,8 @@
 .arrows-show-more {
     @apply bg-paleturquoise text-dimgray w-10 h-10 p-2 mx-2
 }
+
+.ul-footer li{
+    @apply my-4
+}
+
