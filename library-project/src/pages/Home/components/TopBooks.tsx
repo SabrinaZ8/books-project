@@ -29,7 +29,7 @@ export const TopBooks = () => {
           .filter((book) => book.cover_i)
           .map((book) => (
             <div
-              key={book.cover_edition_key}
+              key={book.key}
               className={`flex justify-start items-center p-2 cursor-pointer  bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <div className="flex items-center min-w-[170px] w-[170px] sm:w-[200px] min-h-[200px] h-[270px] sm:h-[300px] mr-4">
