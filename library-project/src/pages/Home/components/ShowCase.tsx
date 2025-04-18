@@ -50,7 +50,7 @@ export const ShowCase = () => {
          style={{ transform: `translateX(-${translate}px)` }}>
           {books.map((book) => (
             <div
-              key={book.cover_edition_key}
+              key={book.key}
               className=" p-2 cursor-pointer transition-bg duration-300 w-[350px] h-[550px] mx-2"
             >
                 <img
