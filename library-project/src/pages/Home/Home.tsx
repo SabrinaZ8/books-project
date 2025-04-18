@@ -7,7 +7,8 @@ import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
 import { TopAuthor } from "./components/TopAuthor";
 import { TopBooks } from "./components/TopBooks";
-import svg from "../../assets/svgs/wavesOpacity.svg"
+import svgWaves from "../../assets/svgs/wavesOpacity.svg"
+
 
 export const Home = () => {
   return (
@@ -50,7 +51,7 @@ export const Home = () => {
       <section>
         <About />
       </section>
-      <img src={svg} alt="" className="w-full bg-wheat rotate-180 object-cover" />
+      <img src={svgWaves} alt="" className="w-full bg-wheat rotate-180 object-cover" />
       <Footer />
     </div>
   );
