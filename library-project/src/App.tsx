@@ -1,14 +1,14 @@
-import { AppRoutes} from "./routes/index"
-
-
+import { AppRoutes } from "./routes/index";
+import { FavoriteProvider } from "./context/FavoriteContext/FavoriteProvider.tsx";
 
 function App() {
-
   return (
-    <div className=" text-neutral-800 font-lora">
-      <AppRoutes />
-    </div>
-  )
+    <FavoriteProvider>
+      <div className=" text-neutral-800 font-lora">
+        <AppRoutes />
+      </div>
+    </FavoriteProvider>
+  );
 }
 
-export default App
+export default App;
