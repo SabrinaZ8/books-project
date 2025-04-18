@@ -6,7 +6,6 @@ export interface Book {
 }
 
 export interface AuthorInfo {
-  author_key: string;
   key: string;
   name: string;
   totalWorks: number;

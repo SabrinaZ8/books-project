@@ -21,6 +21,7 @@ export const TopAuthor = () => {
           })
         );
         setAuthors(responses);
+        console.log(responses);
       } catch (error) {
         console.error("Erro ao buscar autores:", error);
       }
@@ -38,7 +39,7 @@ export const TopAuthor = () => {
         {authors
           .map((author) => (
             <div
-            key={author.author_key}
+            key={author.key}
               className={`flex justify-start items-center p-2 cursor-pointer max-xl:w-[400px] w-full  bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <div className="flex items-center fle mr-4">
