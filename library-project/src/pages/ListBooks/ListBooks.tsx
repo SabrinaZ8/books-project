@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { BookSearch } from "../../components/BookSearch";
 import { NavBar } from "../../components/NavBar";
 import { Book } from "../../types";
+import { useFavoritesContext } from "../../hooks/useFavoriteContext";
+import { BsBookmarkStarFill } from "react-icons/bs";
+import { PiDotsThreeOutlineVerticalBold } from "react-icons/pi";
 
 export const ListBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -11,17 +14,25 @@ export const ListBooks = () => {
   const query = searchParams.get("q");
   const subject = searchParams.get("subject");
 
+  const { addFavorite } = useFavoritesContext();
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         let url = "";
 
         if (query && subject) {
-          url = `https://openlibrary.org/search.json?q=subject:${subject}+${encodeURIComponent(query)}`;
+          url = `https://openlibrary.org/search.json?q=subject:${subject}+${encodeURIComponent(
+            query
+          )}`;
         } else if (query) {
-          url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;
+          url = `https://openlibrary.org/search.json?q=${encodeURIComponent(
+            query
+          )}`;
         } else if (subject) {
-          url = `https://openlibrary.org/search.json?subject=${encodeURIComponent(subject)}`;
+          url = `https://openlibrary.org/search.json?subject=${encodeURIComponent(
+            subject
+          )}`;
         }
 
         if (!url) return; //vim aqui dps e retornar um erro
@@ -53,16 +64,33 @@ export const ListBooks = () => {
           .filter((book) => book.cover_i)
           .map((book) => (
             <div
-              key={book.cover_edition_key}
-              className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300"
+              key={book.key}
+              className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300 relative"
             >
-              <img
-                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
-                width="100"
-                className="shadow-md/70"
-              />
-              <h3 className="font-semibold">{book.title}</h3>
-              <p className="text-sm">{book.author_name}</p>
+              <div className="absolute top-0 right-0 m-3 flex items-center">
+              <button type="button" onClick={() => addFavorite(book)}>
+                  <BsBookmarkStarFill />
+                </button>
+                <PiDotsThreeOutlineVerticalBold className=" text-darkslategray opacity-90" />
+              </div>
+
+              <div>
+                <img
+                  src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                  className="shadow-md/70 w-[100px] h-[165px] object-cover"
+                />
+                <h3 className="font-semibold">{book.title}</h3>
+                <p className="text-sm">{book.author_name}</p>
+              </div>
+
+              <div className="flex justify-end md:hidden">
+                <button
+                  type="button"
+                  className="bg-sandybrown tracking-widest p-1 rounded-md"
+                >
+                  Ver Livro
+                </button>
+              </div>
             </div>
           ))}
       </div>

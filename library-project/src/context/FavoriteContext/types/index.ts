@@ -1,8 +1,10 @@
-export interface Book  {
-    id: string;
+import { Book } from '../../../types/index';
+
+/*export interface Book  {
+    key: string;
     title: string;
-    author: string;
-  };
+    author_name: string;
+  };*/
   
 export interface FavoriteContextType {
     favorites: Book[];

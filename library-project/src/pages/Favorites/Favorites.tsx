@@ -1,5 +1,9 @@
+import { NavBar } from "../../components/NavBar"
+
 export const Favorites = () => {
   return (
-    <div>Favorites</div>
+    <div>
+      <NavBar />
+    </div>
   )
 }
