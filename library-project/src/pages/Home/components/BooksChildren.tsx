@@ -75,7 +75,7 @@ export const BooksChildren = () => {
           .filter((book) => book.cover_i)
           .map((book) => (
             <div
-              key={book.cover_edition_key}
+              key={book.cover_i}
               className={`p-2 cursor-pointer w-[170px] sm:w-[200px] h-[350px] bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <img

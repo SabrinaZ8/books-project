@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BookSearch } from "../../components/BookSearch";
 import { NavBar } from "../../components/NavBar";
@@ -63,35 +63,37 @@ export const ListBooks = () => {
         {books
           .filter((book) => book.cover_i)
           .map((book) => (
-            <div
-              key={book.key}
-              className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300 relative"
-            >
-              <div className="absolute top-0 right-0 m-3 flex items-center">
-              <button type="button" onClick={() => addFavorite(book)}>
-                  <BsBookmarkStarFill />
-                </button>
-                <PiDotsThreeOutlineVerticalBold className=" text-darkslategray opacity-90" />
-              </div>
+            <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key}>
+              <div
+                key={book.key}
+                className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300 relative w-full h-full"
+              >
+                <div className="absolute top-0 right-0 m-3 flex items-center">
+                  <button type="button" onClick={() => addFavorite(book)}>
+                    <BsBookmarkStarFill />
+                  </button>
+                  <PiDotsThreeOutlineVerticalBold className=" text-darkslategray opacity-90" />
+                </div>
 
-              <div>
-                <img
-                  src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
-                  className="shadow-md/70 w-[100px] h-[165px] object-cover"
-                />
-                <h3 className="font-semibold">{book.title}</h3>
-                <p className="text-sm">{book.author_name}</p>
-              </div>
+                <div>
+                  <img
+                    src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                    className="shadow-md/70 w-[100px] h-[165px] object-cover"
+                  />
+                  <h3 className="font-semibold">{book.title}</h3>
+                  <p className="text-sm">{book.author_name}</p>
+                </div>
 
-              <div className="flex justify-end md:hidden">
-                <button
-                  type="button"
-                  className="bg-sandybrown tracking-widest p-1 rounded-md"
-                >
-                  Ver Livro
-                </button>
+                <div className="flex justify-end md:hidden">
+                  <button
+                    type="button"
+                    className="bg-sandybrown tracking-widest p-1 rounded-md"
+                  >
+                    Ver Livro
+                  </button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
       </div>
     </div>

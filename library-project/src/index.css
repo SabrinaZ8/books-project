@@ -45,3 +45,10 @@
 .active {
     @apply text-sandybrown
 }
+
+.author-infos-box {
+    @apply bg-gainsboro mr-4 py-3 px-5 
+}
+.author-infos-box h3{
+    @apply text-xl font-semibold
+}
