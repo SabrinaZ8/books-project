@@ -16,7 +16,7 @@ export const WorksEditions = ({ keyParam }:WorksEditionsProp) => {
        const fetchWorksEditions = async() => {
         try{
             const response = await axios.get(
-                `https://openlibrary.org/works/${keyParam}/editions.json`
+                `https://openlibrary.org/works/${keyParam}/editions.json?limit=20`
               );
               setWorksEditions(response.data.entries);
         }
@@ -27,12 +27,13 @@ export const WorksEditions = ({ keyParam }:WorksEditionsProp) => {
        fetchWorksEditions()
     }, [keyParam])
   return (
-    <div>
+    <div className="flex my-10">
     {worksEditions?.map((edition) => (
       <div>
         {edition.covers?.[0] && (
           <img
-            src={`https://covers.openlibrary.org/b/id/${edition.covers[0]}-L.jpg`}
+            src={`https://covers.openlibrary.org/b/id/${edition.covers[0]}-M.jpg`}
+            className="w-[200px] h-[300px] object-cover mx-3"
           />
         )}
       </div>
