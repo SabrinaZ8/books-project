@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Book } from "../../../types";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 export const TopBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
 
@@ -28,8 +28,8 @@ export const TopBooks = () => {
         {books
           .filter((book) => book.cover_i)
           .map((book) => (
+            <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key}>
             <div
-              key={book.key}
               className={`flex justify-start items-center p-2 cursor-pointer  bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <div className="flex items-center min-w-[170px] w-[170px] sm:w-[200px] min-h-[200px] h-[270px] sm:h-[300px] mr-4">
@@ -43,6 +43,8 @@ export const TopBooks = () => {
                 <p className="text-sm">{book.author_name}</p>
               </div>
             </div>
+            </Link>
+            
           ))}
       </div>
       <div></div>

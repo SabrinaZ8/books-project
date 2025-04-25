@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
 import { Book } from "../../../types";
+import { Link } from "react-router-dom";
 
 export const BooksChildren = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -51,6 +52,7 @@ export const BooksChildren = () => {
           `https://openlibrary.org/search.json?q=children&page=${count}&limit=${limit}`
         );
         setBooks(response.data.docs);
+        console.log(response.data.docs)
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
       }
@@ -74,8 +76,8 @@ export const BooksChildren = () => {
         {books
           .filter((book) => book.cover_i)
           .map((book) => (
+            <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key}>
             <div
-              key={book.cover_i}
               className={`p-2 cursor-pointer w-[170px] sm:w-[200px] h-[350px] bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <img
@@ -85,6 +87,8 @@ export const BooksChildren = () => {
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>
             </div>
+            </Link>
+            
           ))}
       </div>
     </div>
