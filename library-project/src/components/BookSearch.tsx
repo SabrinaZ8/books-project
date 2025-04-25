@@ -8,14 +8,27 @@ export const BookSearch = () => {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    navigate(`/listbooks?q=${encodeURIComponent(inputSearch)}`);
+    const formData = new FormData(e.currentTarget);
+    const subject = formData.get('subjectSelect')?.toString() || '';
+    
+    navigate(`/listbooks?q=${encodeURIComponent(inputSearch)}&subject=${encodeURIComponent(subject)}`);
   }
 
   return (
     <div className="flex mt-14 w-11/12 md:w-3/4 xl:w-1/2 justify-center flex-col items-center">
-      <form onSubmit={(e) => onSubmit(e)} className="flex w-full justify-center">
-        <select className="bg-orangered text-white rounded-sm px-2">
-          <option value="Drama">Drama</option>
+      <form
+        onSubmit={(e) => onSubmit(e)}
+        className="flex w-full justify-center"
+      >
+        <select className="bg-orangered text-white rounded-sm px-2" id="subjectSelect"  name="subjectSelect">
+          <option value="">Padrão</option>
+          <option value="drama">Drama</option>
+          <option value="science">Ciência</option>
+          <option value="fantasy">Fantasia</option>
+          <option value="history">História</option>
+          <option value="art">Arte</option>
+          <option value="romance">Romance</option>
+          <option value="biography">Biografia</option>
         </select>
         <input
           type="text"
