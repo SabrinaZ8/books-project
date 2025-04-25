@@ -5,17 +5,22 @@ import { FavoriteBook } from "./types/index";
 
 export const FavoriteProvider = ({ children }: { children: ReactNode }) => {
   const [favorites, setFavorites] = useState<FavoriteBook[]>([]);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
     }
+    setIsInitialized(true);
   }, []);
 
   useEffect(() => {
+    if(isInitialized) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
+    console.log("local")
+    }
+  }, [favorites, isInitialized]);
 
   const addFavorite = (book: FavoriteBook) => {
     const isFavorite = favorites.some((fav) => fav.key === book.key);
