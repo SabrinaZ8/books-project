@@ -1,4 +1,5 @@
 export type Book = {
+    key: string;
     title: string;
     authors: {
       key: string;

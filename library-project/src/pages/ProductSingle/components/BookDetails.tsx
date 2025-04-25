@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Book } from "../type"
 import axios from "axios";
+import { useFavoritesContext } from "../../../hooks/useFavoriteContext";
 
 type BookDetailsProps = {
     keyParam: string;
@@ -9,6 +10,7 @@ type BookDetailsProps = {
 
 export const BookDetails = ({ keyParam, setAuthorKey }:BookDetailsProps) => {
     const [bookDetails, setBookDetails] = useState<Book | null>(null);
+    const { addFavorite } = useFavoritesContext()
     
     useEffect(() => {
         const fetchBooksDeatails = async () => {
@@ -17,6 +19,7 @@ export const BookDetails = ({ keyParam, setAuthorKey }:BookDetailsProps) => {
               `https://openlibrary.org/works/${keyParam}.json?limit=10`
             );
             setBookDetails(response.data);
+            console.log(response.data)
             setAuthorKey(response.data.authors[0].author.key.replace("/authors/",""))
 
           } catch (error) {
@@ -51,7 +54,8 @@ export const BookDetails = ({ keyParam, setAuthorKey }:BookDetailsProps) => {
             </div>
 
             <div className="w-full my-5">
-              <button className="bg-sandybrown w-full p-2 font-semibold tracking-widest text-darkslategray">
+              <button className="bg-sandybrown w-full p-2 font-semibold tracking-widest text-darkslategray"
+              onClick={() => bookDetails && addFavorite(bookDetails)}>
                 Favoritar
               </button>
             </div>

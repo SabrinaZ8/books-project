@@ -1,10 +1,10 @@
 import { useState, ReactNode, useEffect } from "react";
 import { FavoriteContext } from "./FavoriteContext";
 import { FavoriteContextType } from "./types/index";
-import { Book } from "../../types/index";
+import { FavoriteBook } from "./types/index";
 
 export const FavoriteProvider = ({ children }: { children: ReactNode }) => {
-  const [favorites, setFavorites] = useState<Book[]>([]);
+  const [favorites, setFavorites] = useState<FavoriteBook[]>([]);
 
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
@@ -17,7 +17,7 @@ export const FavoriteProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const addFavorite = (book: Book) => {
+  const addFavorite = (book: FavoriteBook) => {
     const isFavorite = favorites.some((fav) => fav.key === book.key);
     if (!isFavorite) {
     setFavorites((prev) => [...prev, book]);

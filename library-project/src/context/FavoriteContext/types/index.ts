@@ -1,14 +1,19 @@
-import { Book } from '../../../types/index';
 
-/*export interface Book  {
-    key: string;
-    title: string;
-    author_name: string;
-  };*/
+export type FavoriteBook = {
+  key: string; // presente nos dois
+  title: string;
+  author_name?: string[]; // do search.json
+  authors?: { key: string; name?: string }[]; // do works.json
+  cover_i?: number; // do search
+  covers?: number[]; // do works
+  description?: string | { type: string; value: string };
+  first_publish_date?: string;
+  subjects?: string[];
+};
   
 export interface FavoriteContextType {
-    favorites: Book[];
-    addFavorite: (book: Book) => void;
+    favorites: FavoriteBook[];
+    addFavorite: (book: FavoriteBook) => void;
     removeFavorite: (bookId: string) => void;
     isFavorite: (bookId: string) => boolean;
   };
