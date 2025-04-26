@@ -4,6 +4,7 @@ import { NavBar } from "../../components/NavBar";
 import { BookDetails } from "./components/BookDetails";
 import { AuthorDetails } from "./components/AuthorDetails";
 import { WorksEditions } from "./components/WorksEditions";
+import { BooksAuthor } from "./components/BooksAuthor";
 
 export const ProductSingle = () => {
   const [authorName, setAuthorName] = useState("");
@@ -39,6 +40,8 @@ export const ProductSingle = () => {
           </h2>
           <hr className="text-gray-300" />
         </div>
+
+        {authorKey ? <BooksAuthor authorKey={authorKey} /> : ""}
 
       </div>
     </div>
