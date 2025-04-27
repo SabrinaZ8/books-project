@@ -9,18 +9,19 @@ export const ShowCase = () => {
   const [translate, setTranslate] = useState(0);
 
   function nextArrow() {
-    const amountToShow = 3
-    const translateMax: number = (books.length / amountToShow * 1098) - 1098
-    console.log("foi aqui")
-    if(translate < translateMax) { //2196
-    setTranslate(prev => prev + 1098)
-    console.log("Clicou no nextArrow", translate);
+    const amountToShow = 3;
+    const translateMax: number = (books.length / amountToShow) * 1098 - 1098;
+    console.log("foi aqui");
+    if (translate < translateMax) {
+      //2196
+      setTranslate((prev) => prev + 1098);
+      console.log("Clicou no nextArrow", translate);
     }
   }
 
   function previousArrow() {
-    if(translate >= 0) {
-    setTranslate(prev => prev - 1098)
+    if (translate >= 0) {
+      setTranslate((prev) => prev - 1098);
     }
   }
 
@@ -40,24 +41,32 @@ export const ShowCase = () => {
   }, []);
 
   return (
-    <div className="flex justify-center relative h-[calc(100vh-200px)]">
-      <div className="flex justify-start w-[1098px] overflow-hidden">
-        <div className="absolute z-10 inset-0 flex justify-between items-center">
-          <SlArrowLeft className="translate-x-72" onClick={previousArrow}/>
-          <SlArrowRight className="-translate-x-72" onClick={nextArrow}/>
+    <div className="flex justify-center items-center h-[calc(100vh-200px)] p-10">
+      <div className="flex-1">
+        <h2 className="italic text-4xl sm:text-5xl md:text-7xl text-start font-semibold font-playfair">Uma Viagem à Hogwarts</h2>
+        <p className="font-playfair italic text-3xl">
+          Relembre os livros que marcaram a infância de milhões.
+        </p>
+      </div>
+      <div className="flex justify-start w-[1098px] overflow-hidden relative">
+        <div className="absolute z-10 inset-0 flex justify-between items-center ">
+          <SlArrowLeft className="arrows-show" onClick={previousArrow} />
+          <SlArrowRight className="arrows-show" onClick={nextArrow} />
         </div>
-        <div className={`flex justify-center items-center -translate-x-[${translate?.toString()}] transition-transform duration-300`}
-         style={{ transform: `translateX(-${translate}px)` }}>
+        <div
+          className={`flex justify-center items-center -translate-x-[${translate?.toString()}] transition-transform duration-300`}
+          style={{ transform: `translateX(-${translate}px)` }}
+        >
           {books.map((book) => (
             <div
               key={book.key}
               className=" p-2 cursor-pointer transition-bg duration-300 w-[350px] h-[550px] mx-2"
             >
-                <img
-                  src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
-                  alt={book.title}
-                  className="shadow-md/70 w-[350px] h-[500px] object-contain"	
-                />
+              <img
+                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                alt={book.title}
+                className="shadow-md/70 w-[350px] h-[500px] object-contain"
+              />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>
             </div>
