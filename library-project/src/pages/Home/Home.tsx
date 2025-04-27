@@ -15,7 +15,7 @@ export const Home = () => {
     <div className="bg-[url()] bg-no-repeat bg-contain">
       <NavBar />
 
-      <section className="h-[calc(100vh-105px)] bg-no-repeat bg-cover bg-[url(https://cdn.pixabay.com/photo/2021/06/24/11/18/background-6360866_1280.png)]">
+      <section className="h-[calc(100vh-105px)] max-h-[900px] bg-hero">
         <div className="relative flex flex-col justify-center items-center h-full ">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold">
             buscador de livros
