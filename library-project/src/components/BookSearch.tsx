@@ -20,7 +20,7 @@ export const BookSearch = () => {
         onSubmit={(e) => onSubmit(e)}
         className="flex w-full justify-center"
       >
-        <select className="bg-orangered text-white rounded-sm px-2" id="subjectSelect"  name="subjectSelect">
+        <select className="bg-orangered text-white rounded-sm px-2" id="subjectSelect"  name="subjectSelect" aria-label="Categoria">
           <option value="">Padrão</option>
           <option value="drama">Drama</option>
           <option value="science">Ciência</option>
@@ -33,6 +33,7 @@ export const BookSearch = () => {
         <input
           type="text"
           name="book-search"
+          aria-label="Digite um livro"
           value={inputSearch}
           onChange={(e) => setInputSearch(e.target.value)}
           className="bg-white rounded-sm w-full 2xl:w-[600px] py-4 px-2 mx-3"
