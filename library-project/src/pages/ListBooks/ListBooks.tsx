@@ -50,9 +50,9 @@ export const ListBooks = () => {
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100">
-      <div className="bg-[url(../../../src/assets/background/bg-image.webp)] w-full bg-cover bg-center">
-        <div className="bg-black/5 backdrop-blur-xs w-full flex flex-col justify-center items-center p-4">
-          <NavBar />
+      <NavBar />
+      <div className="bg-[url(../../../src/assets/background/bg-image.webp)] w-full bg-cover bg-center h-[200px]">
+        <div className="bg-black/5 backdrop-blur-xs w-full h-full flex flex-col justify-center items-center p-4">
           <BookSearch />
         </div>
       </div>
@@ -77,9 +77,10 @@ export const ListBooks = () => {
 
                 <div>
                   <img
-                    src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
+                    src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
                     className="shadow-md/70 w-[100px] h-[165px] object-cover"
                     alt={`Imagem da capa do livro ${book.title}`}
+                    loading="lazy"
                   />
                   <h3 className="font-semibold">{book.title}</h3>
                   <p className="text-sm">{book.author_name}</p>
