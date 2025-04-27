@@ -83,6 +83,7 @@ export const BooksChildren = () => {
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
                 className={`h-[90%] object-cover object-left `}
+                alt={`Imagem da capa do livro ${book.title}`}
               />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>

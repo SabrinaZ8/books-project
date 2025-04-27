@@ -79,6 +79,7 @@ export const ListBooks = () => {
                   <img
                     src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                     className="shadow-md/70 w-[100px] h-[165px] object-cover"
+                    alt={`Imagem da capa do livro ${book.title}`}
                   />
                   <h3 className="font-semibold">{book.title}</h3>
                   <p className="text-sm">{book.author_name}</p>

@@ -6,7 +6,8 @@ type WorksEditionsProp = {
     keyParam: string;
   };
   type EditionsType = {
-    covers: number[];
+    covers: number[];    
+    title: string;
   };
 export const WorksEditions = ({ keyParam }:WorksEditionsProp) => {
 
@@ -34,6 +35,7 @@ export const WorksEditions = ({ keyParam }:WorksEditionsProp) => {
           <img
             src={`https://covers.openlibrary.org/b/id/${edition.covers[0]}-M.jpg`}
             className="w-[200px] h-[300px] object-cover mx-3"
+            alt={`Imagem de capa da edição ${edition.title}`}
           />
         )}
       </div>

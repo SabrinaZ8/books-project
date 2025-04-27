@@ -32,6 +32,7 @@ export const BooksAuthor = ({ authorKey }: AuthorKeyProp) => {
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.covers[0]}-M.jpg`}
                 className="w-[200px] h-[300px] object-cover mx-3"
+                alt={`Imagem do livro ${book.title}`}
               />
             )}
           </div>

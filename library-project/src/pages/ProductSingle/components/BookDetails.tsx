@@ -50,6 +50,7 @@ export const BookDetails = ({ keyParam, setAuthorKey }:BookDetailsProps) => {
               <img
                 src={`https://covers.openlibrary.org/b/id/${bookDetails?.covers[0]}-L.jpg`}
                 className="shadow-md/70 min-w-[200px]"
+                alt={`Imagem da capa do livro ${bookDetails?.title}`}
               />
             </div>
 

@@ -36,6 +36,7 @@ export const TopBooks = () => {
                 <img
                   src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                   className={`object-cover w-full h-full min-w-[170px] min-h-[200px]`}
+                  alt={`Imagem da obra ${book.title}`}
                 />
               </div>
               <div>

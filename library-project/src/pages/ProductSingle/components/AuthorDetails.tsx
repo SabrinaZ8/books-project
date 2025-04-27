@@ -33,7 +33,7 @@ export const AuthorDetails = ({authorKey, setAuthorName}: authorKeyType) => {
       {authorDetails?.photos && (
         <img
           src={`https://covers.openlibrary.org/a/id/${authorDetails.photos[0]}-L.jpg`}
-          alt="Imagem Author"
+          alt="Imagem do autor"
           className="w-[300px] float-right mx-2 object-cover"
         />
       )}

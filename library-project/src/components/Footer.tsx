@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="flex justify-center w-full lg:w-auto">
           <img
             src={logo}
-            alt=""
+            alt="Logo"
             className="w-[100px] rounded-r-full rounded-l-full opacity-80"
           />
         </div>
