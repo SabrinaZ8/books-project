@@ -81,8 +81,8 @@ export const BooksChildren = () => {
               className={`p-2 cursor-pointer w-[170px] sm:w-[200px] h-[350px] bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <img
-                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
-                className={`h-[90%] object-contain object-left `}
+                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                className={`h-[90%] object-cover object-left `}
               />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>

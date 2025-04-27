@@ -52,3 +52,6 @@
 .author-infos-box h3{
     @apply text-xl font-semibold
 }
+.arrows-show {
+    @apply bg-orangered w-10 h-10 p-2 rounded-full cursor-pointer text-white shadow-md/50
+}
