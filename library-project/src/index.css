@@ -55,3 +55,7 @@
 .arrows-show {
     @apply bg-orangered w-10 h-10 p-2 rounded-full cursor-pointer text-white shadow-md/50
 }
+
+.search-input {
+    @apply bg-orangered text-white rounded-sm px-1 sm:px-4 focus:outline-0
+}
