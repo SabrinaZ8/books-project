@@ -16,19 +16,19 @@ export const Home = () => {
       <NavBar />
 
       <section className="h-[calc(100vh-105px)] max-h-[900px] bg-hero">
-        <div className="relative flex flex-col justify-center items-center h-full ">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold">
+        <div className="relative flex flex-col justify-center items-center h-full text-center px-1">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold mb-3">
             buscador de livros
           </h1>
           <p className="text-xl md:text-2xl">
             procure por livros, autores, categorias
           </p>
           <BookSearch />
-          <div className="absolute bottom-4 right-4 bg-contain">
+          <div className="absolute bottom-4 right-4">
             <img
               src="../../../src/assets/background/teste.png"
               alt=""
-              className="min-w-80 min-h-80 h-80 w-80 object-contain"
+              className="w-40 h-40 sm:h-80 sm:w-80 object-contain"
             />
           </div>
         </div>
