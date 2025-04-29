@@ -3,25 +3,38 @@ import { useEffect, useState } from "react";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
 import { Book } from "../../../types";
+import { useWidth } from "../../../hooks/useWidth";
 
 export const ShowCase = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [translate, setTranslate] = useState(0);
+  const [slideSize, setSlideSize] = useState(1038)
+
+  const width = useWidth()
+
+  useEffect(() => {
+    if(width < 768) {
+      setSlideSize(346)
+    } else if( width <= 1536) {
+      setSlideSize(692 )
+    } else if(width > 1536) {
+      setSlideSize(1038)
+    }
+  }, [width])
 
   function nextArrow() {
     const amountToShow = 3;
-    const translateMax: number = (books.length / amountToShow) * 1098 - 1098;
-    console.log("foi aqui");
+    const translateMax: number = (books.length / amountToShow) * slideSize - slideSize;
+
     if (translate < translateMax) {
-      //2196
-      setTranslate((prev) => prev + 1098);
+      setTranslate((prev) => prev + slideSize);
       console.log("Clicou no nextArrow", translate);
     }
   }
 
   function previousArrow() {
     if (translate >= 0) {
-      setTranslate((prev) => prev - 1098);
+      setTranslate((prev) => prev - slideSize);
     }
   }
 
@@ -40,15 +53,21 @@ export const ShowCase = () => {
     fetchBooks();
   }, []);
 
+  console.log(slideSize)
+
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-200px)] p-10">
-      <div className="flex-1">
-        <h2 className="italic text-4xl sm:text-5xl md:text-7xl text-start font-semibold font-playfair">Uma Viagem à Hogwarts</h2>
+    <div className="flex justify-center items-center min-h-[calc(100vh-200px)] p-1 sm:p-10 flex-col lg:flex-row">
+      <div className="my-7 max-lg:text-center">
+        <h2 className="italic text-4xl sm:text-5xl md:text-6xl font-semibold font-playfair">Uma Viagem à Hogwarts</h2>
         <p className="font-playfair italic text-3xl">
           Relembre os livros que marcaram a infância de milhões.
         </p>
       </div>
-      <div className="flex justify-start w-[1098px] overflow-hidden relative">
+      <div className={`flex justify-start overflow-hidden relative`}
+      style={{
+        minWidth: `${slideSize}px`,
+        width: `${slideSize}px`,
+      }}>
         <div className="absolute z-10 inset-0 flex justify-between items-center ">
           <SlArrowLeft className="arrows-show" onClick={previousArrow} />
           <SlArrowRight className="arrows-show" onClick={nextArrow} />
@@ -60,12 +79,12 @@ export const ShowCase = () => {
           {books.map((book) => (
             <div
               key={book.key}
-              className=" p-2 cursor-pointer transition-bg duration-300 w-[350px] h-[550px] mx-2"
+              className=" p-2 cursor-pointer transition-bg duration-300 w-[330px] h-[550px] mx-2"
             >
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                 alt={book.title}
-                className="shadow-md/70 w-[350px] h-[500px] object-contain"
+                className="shadow-md/70 w-[330px] h-[500px] object-contain"
               />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>
