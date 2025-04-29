@@ -8,22 +8,26 @@ import { useWidth } from "../../../hooks/useWidth";
 export const ShowCase = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [translate, setTranslate] = useState(0);
-  const [slideSize, setSlideSize] = useState(1038)
+  const [slideSize, setSlideSize] = useState(0)
+  const [amountToShow, setAmountToShow] = useState(1)
 
   const width = useWidth()
 
   useEffect(() => {
+    setTranslate(0)
     if(width < 768) {
       setSlideSize(346)
+      setAmountToShow(1)
     } else if( width <= 1536) {
-      setSlideSize(692 )
+      setSlideSize(692)
+      setAmountToShow(2)
     } else if(width > 1536) {
       setSlideSize(1038)
+      setAmountToShow(3)
     }
   }, [width])
 
   function nextArrow() {
-    const amountToShow = 3;
     const translateMax: number = (books.length / amountToShow) * slideSize - slideSize;
 
     if (translate < translateMax) {
@@ -53,11 +57,9 @@ export const ShowCase = () => {
     fetchBooks();
   }, []);
 
-  console.log(slideSize)
-
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)] p-1 sm:p-10 flex-col lg:flex-row">
-      <div className="my-7 max-lg:text-center">
+      <div className="my-7 xl:p-16 2xl:p-20 max-lg:text-center">
         <h2 className="italic text-4xl sm:text-5xl md:text-6xl font-semibold font-playfair">Uma Viagem à Hogwarts</h2>
         <p className="font-playfair italic text-3xl">
           Relembre os livros que marcaram a infância de milhões.
