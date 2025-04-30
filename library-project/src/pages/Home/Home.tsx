@@ -36,7 +36,7 @@ export const Home = () => {
       <section className="">
         <ShowCase />
       </section>
-      <section className="section-style h-[300px] lg:h-[400px] ">
+      <section className="section-style h-[300px] lg:h-[400px]">
         <h2 className="title-h2">Encontre por categoria</h2>
         <FindCategory />
       </section>
