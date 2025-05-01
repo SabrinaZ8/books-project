@@ -70,7 +70,7 @@ export const BooksChildren = () => {
         </div>
       </div>
       <div
-        className="grid max-sm:grid-rows-1 grid-rows-2 grid-flow-col gap-1 sm:gap-4 mb-10 mt-5 px-1 sm:x-4 overflow-hidden"
+        className="grid max-sm:grid-rows-1 grid-rows-2 grid-flow-col gap-1 sm:gap-4 mb-10 mt-5 px-1 sm:x-4 overflow-hidden max-sm:overflow-x-auto"
         ref={elementoRef}
       >
         {books
