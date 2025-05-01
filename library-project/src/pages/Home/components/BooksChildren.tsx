@@ -63,14 +63,14 @@ export const BooksChildren = () => {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h2 className="title-h2">Books for children</h2>
+        <h2 className="title-h2">Livros para crianças</h2>
         <div className="flex items-center">
           <SlArrowLeft className="arrows-show-more" onClick={arrowBack} />
           <SlArrowRight className="arrows-show-more" onClick={arrowNext} />
         </div>
       </div>
       <div
-        className="grid grid-rows-2 grid-flow-col gap-4 mb-10 mt-5 px-1 sm:x-4 overflow-hidden"
+        className="grid max-sm:grid-rows-1 grid-rows-2 grid-flow-col gap-1 sm:gap-4 mb-10 mt-5 px-1 sm:x-4 overflow-hidden"
         ref={elementoRef}
       >
         {books
@@ -78,15 +78,15 @@ export const BooksChildren = () => {
           .map((book) => (
             <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key}>
             <div
-              className={`p-2 cursor-pointer w-[170px] sm:w-[200px] h-[350px] bg-white hover:bg-gainsboro transition-bg duration-300`}
+              className={`p-2 cursor-pointer w-[170px] sm:w-[200px] min-h-[350px] bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-                className={`h-[90%] object-cover object-left `}
+                className={`h-[280px] object-cover object-left shadow-md/70`}
                 alt={`Imagem da capa do livro ${book.title}`}
               />
               <h3 className="font-semibold">{book.title}</h3>
-              <p className="text-sm">{book.author_name}</p>
+              <p className="text-sm">{book.author_name[0]}</p>
             </div>
             </Link>
             

@@ -31,7 +31,7 @@
 }
 
 .section-style {
-    @apply flex flex-col justify-center p-0 lg:p-10 m-2 lg:m-5
+    @apply flex flex-col justify-center p-0 lg:p-10 m-1 lg:m-5
 }
 
 .arrows-show-more {

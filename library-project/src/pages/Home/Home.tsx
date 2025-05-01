@@ -40,7 +40,7 @@ export const Home = () => {
         <h2 className="title-h2">Encontre por categoria</h2>
         <FindCategory />
       </section>
-      <section className="section-style px-4">
+      <section className="section-style">
         <BooksChildren />
       </section>
       <section className="flex my-10 justify-between p-5 flex-col-reverse xl:flex-row">
