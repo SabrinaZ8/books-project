@@ -9,7 +9,6 @@ import { TopAuthor } from "./components/TopAuthor";
 import { TopBooks } from "./components/TopBooks";
 import svgWaves from "../../assets/svgs/wavesOpacity.svg"
 
-
 export const Home = () => {
   return (
     <div className="bg-[url()] bg-no-repeat bg-contain">
@@ -50,7 +49,7 @@ export const Home = () => {
       <section>
         <About />
       </section>
-      <img src={svgWaves} alt="" className="w-full bg-wheat rotate-180 object-cover" />
+      <img src={svgWaves} alt="" className="w-full max-sm:h-[50px] max-lg:h-[100px] bg-wheat rotate-180 object-cover" />
       <Footer />
     </div>
   );
