@@ -4,7 +4,7 @@ export const About = () => {
   return (
     <div className="flex justify-center items-center bg-wheat p-10 flex-col lg:flex-row">
       <div className={`lg:w-1/2`}>
-        <h2 className="title-h2 my-10"> O que é a Open Library?</h2>
+        <h2 className="title-h2 my-10" translate="no"> O que é a Open Library?</h2>
         <p className="italic">
           A Open Library é um projeto incrível criado pela organização sem fins
           lucrativos Internet Archive. A missão deles é bem simples: criar uma
