@@ -43,7 +43,7 @@ export const Home = () => {
       <section className="section-style">
         <BooksChildren />
       </section>
-      <section className="flex my-10 justify-between p-5 flex-col-reverse xl:flex-row">
+      <section className="flex my-10 justify-between sm:p-5 flex-col-reverse xl:flex-row">
         <TopBooks />
         <TopAuthor />
       </section>

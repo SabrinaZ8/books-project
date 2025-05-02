@@ -31,21 +31,21 @@ export const TopAuthor = () => {
   }, []);
 
   return (
-    <div className="h-1/2 bg-wheat p-10 rounded-lg w-full xl:w-[30%]">
+    <div className="h-1/2 bg-wheat flex flex-col justify-center items-center py-10 px-3 xl:px-10 rounded-lg w-full xl:w-[30%]">
       <div>
         <h2 className="title-h2">Top Autores</h2>
       </div>
-      <div className="flex flex-col lg:flex-row xl:flex-col my-10 items-start gap-4">
+      <div className="flex flex-col md:flex-row xl:flex-col my-10 items-start gap-4">
         {authors
           .map((author) => (
             <div
             key={author.key}
-              className={`flex justify-start items-center p-2 cursor-pointer max-xl:w-[400px] w-full  bg-white hover:bg-gainsboro transition-bg duration-300`}
+              className={`flex justify-start items-center p-2 cursor-pointer w-full max-w-[400px]  bg-white hover:bg-gainsboro transition-bg duration-300`}
             >
               <div className="flex items-center fle mr-4">
                 <img
                   src={`https://covers.openlibrary.org/a/olid/${author.key.replace('/authors/', '')}-M.jpg`}
-                  className={`w-[150px] h-[150px] min-w-[150px] object-cover`}
+                  className={`w-28 h-28 min-w-28 lg:w-[150px] lg:h-[150px] lg:min-w-[150px] object-cover`}
                   alt={`Imagem de ${author.name}`}
                 />
               </div>
