@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { Book } from "../type"
 import axios from "axios";
 import { useFavoritesContext } from "../../../hooks/useFavoriteContext";
+import { useParams } from "react-router-dom";
 
 type BookDetailsProps = {
-    keyParam: string;
     setAuthorKey: React.Dispatch<React.SetStateAction<string>>;
   };
 
-export const BookDetails = ({ keyParam, setAuthorKey }:BookDetailsProps) => {
+export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
     const [bookDetails, setBookDetails] = useState<Book | null>(null);
     const { addFavorite } = useFavoritesContext()
-    
+    const { keyParam } = useParams();
+
     useEffect(() => {
         const fetchBooksDeatails = async () => {
           try {

@@ -1,18 +1,17 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 
 
-type WorksEditionsProp = {
-    keyParam: string;
-  };
+
   type EditionsType = {
     covers: number[];    
     title: string;
   };
-export const WorksEditions = ({ keyParam }:WorksEditionsProp) => {
+export const WorksEditions = () => {
 
     const [worksEditions, setWorksEditions] = useState<EditionsType[]>([]);
-    
+    const { keyParam} = useParams()
     useEffect(() => {
        const fetchWorksEditions = async() => {
         try{

@@ -10,7 +10,8 @@ export const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/favorites" element={<Favorites />} />
-            <Route path="/book/:key" element={<ProductSingle />} />
+            <Route path="/work/:keyParam" element={<ProductSingle />} />
+            <Route path="/book/:keyParam" element={<ProductSingle />} />
             <Route path="/listbooks" element={<ListBooks />} />
           </Routes>
       </BrowserRouter>

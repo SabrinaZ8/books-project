@@ -9,14 +9,14 @@ import { BooksAuthor } from "./components/BooksAuthor";
 export const ProductSingle = () => {
   const [authorName, setAuthorName] = useState("");
   const [authorKey, setAuthorKey] = useState("")
-  const { key } = useParams<{ key: string }>();
+  const { keyParam } = useParams();
 
   return (
     <div className="">
       <NavBar />
       <div className="p-10">
 
-      {key ? <BookDetails keyParam={key} setAuthorKey={setAuthorKey} /> : <p>Livro não encontrado</p>}
+      {keyParam ? <BookDetails setAuthorKey={setAuthorKey} /> : <p>Livro não encontrado</p>}
 
         <div>
           <h2 className="text-xl tracking-widest">Author</h2>
@@ -32,7 +32,7 @@ export const ProductSingle = () => {
           <hr className="text-gray-300" />
         </div>
 
-        { key ? <WorksEditions keyParam={key} /> : ""}
+        { keyParam ? <WorksEditions /> : "Edições não encontradas"}
 
         <div>
           <h2 className="text-xl tracking-widest">
@@ -41,7 +41,7 @@ export const ProductSingle = () => {
           <hr className="text-gray-300" />
         </div>
 
-        {authorKey ? <BooksAuthor authorKey={authorKey} /> : ""}
+        {authorKey ? <BooksAuthor authorKey={authorKey} /> : "Livros não encontrados"}
 
       </div>
     </div>
