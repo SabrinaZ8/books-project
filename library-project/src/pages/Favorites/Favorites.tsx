@@ -1,54 +1,56 @@
+import { Link } from "react-router-dom";
+import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { AiFillDelete } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa";
 
-
 export const Favorites = () => {
   const { favorites, removeFavorite } = useFavoritesContext();
   console.log(favorites);
   return (
-    <div>
+    <div className="min-h-screen">
       <NavBar />
-      <div className="my-20 ml-[60px]">
-        <h1 className="text-6xl font-semibold font-playfair tracking-widest">
+      <div className="my-10">
+        <h1 className="text-5xl lg:text-6xl font-semibold font-playfair tracking-widest text-center">
           Seus Favoritos
         </h1>
       </div>
-      <div className="p-10 flex flex-wrap">
+      <div className="py-10 flex flex-wrap min-h-[calc(100vh-300px)]">
         {favorites.map((favorite) => (
-          <div className="mx-5 p-2">
-            <div className="flex flex-col items-start justify-start">
+          <Link to={`/book/${favorite.key.replace("/works/", "")}`} key={favorite.key}  className="mx-1 lg:mx-5 p-2 flex w-full md:w-[350px] 2xl:w-[400px]">
+            <div className="flex items-start justify-start">
               <img
                 src={`https://covers.openlibrary.org/b/id/${
                   favorite.cover_i ? favorite.cover_i : favorite.covers?.[0]
                 }-L.jpg`}
                 alt=""
-                className="shadow-md/70"
+                className="w-[150px] min-w-[150px] 2xl:min-w-[200px] h-[250px] 2xl:h-[300px] shadow-md/70"
               />
-              <h2 className="text-xl font-semibold my-5">{favorite.title}</h2>
-              <h3>
-                {favorite.author_name
-                  ? favorite.author_name
-                  : favorite.authors?.map((author) => author.name).join(", ")}
-              </h3>
             </div>
-            <div className="flex justify-start">
-              <button
-                type="button"
-                onClick={() => removeFavorite(favorite.key)}
-                className="flex items-center justify-between mr-10 font-semibold"
-              >
-                <AiFillDelete className="w-8 h-8" />
-                Excluir
-              </button>
-              <button className="">
-                <FaRegEye className="w-8 h-8"/>
-              </button>
+            <div className="flex flex-col flex-1 items-center justify-center px-2 bg-gainsboro rounded-r-lg h-[250px] 2xl:h-[300px]">
+              <div className="">
+                <h2 className="text-lg sm:text-xl font-semibold my-5">{favorite.title}</h2>
+              </div>
+
+              <div className="flex justify-start">
+                <button
+                  type="button"
+                  onClick={() => removeFavorite(favorite.key)}
+                  className="flex items-center justify-between mr-10 font-semibold cursor-pointer"
+                >
+                  <AiFillDelete className="w-8 h-8 text-darkslategray cursor-pointer" />
+                  Excluir
+                </button>
+                <button className="cursor-pointer">
+                  <FaRegEye className="w-8 h-8 text-darkslategray" />
+                </button>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
