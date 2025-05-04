@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Book } from "../type"
 import axios from "axios";
-import { useFavoritesContext } from "../../../hooks/useFavoriteContext";
+import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 type BookDetailsProps = {
     setAuthorKey: React.Dispatch<React.SetStateAction<string>>;
@@ -12,6 +13,10 @@ export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
     const [bookDetails, setBookDetails] = useState<Book | null>(null);
     const { addFavorite } = useFavoritesContext()
     const { keyParam } = useParams();
+
+    
+  const location = useLocation();
+  const book = location.state?.book as Book | undefined;
 
     useEffect(() => {
         const fetchBooksDeatails = async () => {
@@ -30,7 +35,7 @@ export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
     
         fetchBooksDeatails();
       }, [keyParam, setAuthorKey]);
-
+      console.log(bookDetails)
     return (
     <div className="flex flex-row-reverse justify-end my-10">
           <div className="mx-5">
@@ -48,6 +53,7 @@ export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
 
           <div>
             <div>
+              <h1>{book?.title}</h1>
               <img
                 src={`https://covers.openlibrary.org/b/id/${bookDetails?.covers[0]}-L.jpg`}
                 className="shadow-md/70 min-w-[200px]"

@@ -63,7 +63,7 @@ export const ListBooks = () => {
         {books
           .filter((book) => book.cover_i)
           .map((book) => (
-            <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key}>
+            <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key} state={{book}}>
               <div
                 key={book.key}
                 className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300 relative w-full h-full"
