@@ -18,7 +18,7 @@ export const Favorites = () => {
       </div>
       <div className="py-10 flex flex-wrap min-h-[calc(100vh-300px)]">
         {favorites.map((favorite) => (
-          <Link to={`/book/${favorite.key.replace("/works/", "")}`} key={favorite.key}  className="mx-1 lg:mx-5 p-2 flex w-full md:w-[350px] 2xl:w-[400px]">
+          <Link to={`/book/${favorite.key.replace("/works/", "")}`} key={favorite.key}  className="mx-1 lg:mx-5 p-2 flex flex-1 w-full sm:max-w-[500px]">
             <div className="flex items-start justify-start">
               <img
                 src={`https://covers.openlibrary.org/b/id/${
