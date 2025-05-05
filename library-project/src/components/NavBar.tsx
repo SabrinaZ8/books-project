@@ -1,5 +1,4 @@
 import { BiSolidBookHeart } from "react-icons/bi";
-import logo from "../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
@@ -9,7 +8,7 @@ export const NavBar = () => {
       <NavLink to="/">
         <div>
           <img
-            src={logo}
+            src="/images/logo.webp"
             alt="Logo"
             className="w-[70px] min-w-[70px] rounded-full"
           />

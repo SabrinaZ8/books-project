@@ -1,4 +1,3 @@
-import logo from "../assets/images/logo.png";
 import { IoSearch } from "react-icons/io5";
 
 export const Footer = () => {
@@ -7,7 +6,7 @@ export const Footer = () => {
       <div className="flex justify-around items-center w-full h-[90%] flex-wrap flex-col sm:flex-row">
         <div className="flex justify-center w-full lg:w-auto">
           <img
-            src={logo}
+            src="/images/logo.webp"
             alt="Logo"
             className="w-[100px] rounded-r-full rounded-l-full opacity-80"
           />
