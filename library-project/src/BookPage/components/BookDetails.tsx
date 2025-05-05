@@ -3,7 +3,6 @@ import { Book } from "../type"
 import axios from "axios";
 import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
 type BookDetailsProps = {
     setAuthorKey: React.Dispatch<React.SetStateAction<string>>;
@@ -14,9 +13,6 @@ export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
     const { addFavorite } = useFavoritesContext()
     const { keyParam } = useParams();
 
-    
-  const location = useLocation();
-  const book = location.state?.book as Book | undefined;
 
     useEffect(() => {
         const fetchBooksDeatails = async () => {
@@ -53,7 +49,6 @@ export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
 
           <div>
             <div>
-              <h1>{book?.title}</h1>
               <img
                 src={`https://covers.openlibrary.org/b/id/${bookDetails?.covers[0]}-L.jpg`}
                 className="shadow-md/70 min-w-[200px]"
