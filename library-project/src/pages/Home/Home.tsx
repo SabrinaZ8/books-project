@@ -25,7 +25,7 @@ export const Home = () => {
           <BookSearch />
           <div className="absolute bottom-4 right-4">
             <img
-              src="../../../src/assets/background/teste.png"
+              src="/images/books-bg.webp"
               alt=""
               className="w-40 h-40 sm:h-80 sm:w-80 object-contain"
             />
