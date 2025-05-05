@@ -5,7 +5,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { Book } from "../../../types";
 import { useWidth } from "../../../hooks/useWidth";
 
-export const ShowCase = () => {
+ export const ShowCase = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [translate, setTranslate] = useState(0);
   const [slideSize, setSlideSize] = useState(0)
@@ -56,7 +56,7 @@ export const ShowCase = () => {
     };
     fetchBooks();
   }, []);
-
+console.log("Renderizou")
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)] p-1 sm:p-10 flex-col lg:flex-row">
       <div className="my-7 xl:p-16 2xl:p-20 max-lg:text-center">
@@ -87,6 +87,7 @@ export const ShowCase = () => {
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                 alt={book.title}
                 className="shadow-md/70 w-[330px] h-[500px] object-contain"
+                loading="lazy"
               />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>

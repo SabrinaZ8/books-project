@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Book } from "../../../types";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 export const TopBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
 
@@ -12,6 +13,7 @@ export const TopBooks = () => {
           `https://openlibrary.org/search.json?q=*&sort=editions&limit=6`
         );
         setBooks(response.data.docs);
+        console.log(response.data.docs);
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
       }
@@ -37,6 +39,7 @@ export const TopBooks = () => {
                   src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                   className={`object-cover w-full h-full min-w-[150px] min-h-[250px]`}
                   alt={`Imagem da obra ${book.title}`}
+                  loading="lazy"
                 />
               </div>
               <div>
@@ -48,7 +51,6 @@ export const TopBooks = () => {
             
           ))}
       </div>
-      <div></div>
     </div>
   );
 };

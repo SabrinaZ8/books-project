@@ -18,7 +18,7 @@
 }
 
 .bg-hero {
-    @apply bg-[url(./assets/background/bg-hero.webp)] bg-no-repeat bg-cover
+    @apply bg-[url(/images/bg-hero.webp)] bg-no-repeat bg-cover
 }
 
 .find-category {

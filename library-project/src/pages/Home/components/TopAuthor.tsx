@@ -47,6 +47,7 @@ export const TopAuthor = () => {
                   src={`https://covers.openlibrary.org/a/olid/${author.key.replace('/authors/', '')}-M.jpg`}
                   className={`w-28 h-28 min-w-28 lg:w-[150px] lg:h-[150px] lg:min-w-[150px] object-cover`}
                   alt={`Imagem de ${author.name}`}
+                  loading="lazy"
                 />
               </div>
               <div>
@@ -58,3 +59,5 @@ export const TopAuthor = () => {
     </div>
   );
 };
+
+

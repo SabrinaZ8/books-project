@@ -6,7 +6,6 @@ import { NavBar } from "../../components/NavBar";
 import { Book } from "../../types";
 import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { BsBookmarkStarFill } from "react-icons/bs";
-import { PiDotsThreeOutlineVerticalBold } from "react-icons/pi";
 
 export const ListBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -72,7 +71,6 @@ export const ListBooks = () => {
                   <button type="button" onClick={() => addFavorite(book)}>
                     <BsBookmarkStarFill />
                   </button>
-                  <PiDotsThreeOutlineVerticalBold className=" text-darkslategray opacity-90" />
                 </div>
 
                 <div>
