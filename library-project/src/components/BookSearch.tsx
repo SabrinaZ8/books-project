@@ -36,7 +36,7 @@ export const BookSearch = () => {
           aria-label="Digite um livro"
           value={inputSearch}
           onChange={(e) => setInputSearch(e.target.value)}
-          className="bg-white rounded-sm w-full 2xl:w-[600px] py-4 px-2 mx-3"
+          className="bg-white rounded-sm w-full 2xl:w-[600px] py-4 px-2 mx-3 focus:outline-none"
         />
         <button
           type="submit"
