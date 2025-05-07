@@ -36,7 +36,11 @@ export const Favorites = () => {
               <div className="flex justify-start">
                 <button
                   type="button"
-                  onClick={() => removeFavorite(favorite.key)}
+                  onClick={(e) => {
+                    removeFavorite(favorite.key)
+                    e.stopPropagation();
+                    e.preventDefault()
+                  }} 
                   className="flex items-center justify-between mr-10 font-semibold cursor-pointer"
                 >
                   <AiFillDelete className="w-8 h-8 text-darkslategray cursor-pointer" />

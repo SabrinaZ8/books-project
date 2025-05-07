@@ -62,13 +62,25 @@ export const ListBooks = () => {
         {books
           .filter((book) => book.cover_i)
           .map((book) => (
-            <Link to={`/book/${book.key.replace('/works/', '')}`} key={book.key} state={{book}}>
+            <Link
+              to={`/book/${book.key.replace("/works/", "")}`}
+              key={book.key}
+              state={{ book }}
+            >
               <div
                 key={book.key}
                 className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300 relative w-full h-full"
               >
-                <div className="absolute top-0 right-0 m-3 flex items-center">
-                  <button type="button" onClick={() => addFavorite(book)}>
+                <div className="absolute top-0 right-0 m-3 flex items-center cursor-pointer">
+                  <button
+                    type="button"
+                    className="cursor-pointer"
+                    onClick={(e) => {
+                      addFavorite(book);
+                      e.stopPropagation();
+                      e.preventDefault();
+                    }}
+                  >
                     <BsBookmarkStarFill />
                   </button>
                 </div>
