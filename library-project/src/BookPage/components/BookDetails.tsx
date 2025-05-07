@@ -43,7 +43,7 @@ export const BookDetails = ({setAuthorKey }:BookDetailsProps) => {
             </p>
             <div className="my-5 bg-gainsboro inline-block p-5 text-center">
               <h3 className="text-xl font-bold">Primeira data de publicação</h3>
-              <p>{bookDetails?.first_publish_date}</p>
+              <p>{bookDetails?.first_publish_date ? bookDetails?.first_publish_date : "-"}</p>
             </div>
           </div>
 

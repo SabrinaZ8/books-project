@@ -46,11 +46,11 @@ export const AuthorDetails = ({authorKey, setAuthorName}: authorKeyType) => {
         <div className="inline-flex justify-start w-1/2 my-4">
           <div className="author-infos-box">
             <h3>Aniversário</h3>
-            <p>{authorDetails?.birth_date}</p>
+            <p>{authorDetails?.birth_date ? authorDetails?.birth_date : "-"}</p>
           </div>
           <div className="author-infos-box">
             <h3>Data da morte</h3>
-            <p>{authorDetails?.death_date}</p>
+            <p>{authorDetails?.death_date ? authorDetails?.death_date : "-"}</p>
           </div>
         </div>
       </div>
