@@ -3,7 +3,6 @@ import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { AiFillDelete } from "react-icons/ai";
-import { FaRegEye } from "react-icons/fa";
 
 export const Favorites = () => {
   const { favorites, removeFavorite } = useFavoritesContext();
@@ -45,9 +44,6 @@ export const Favorites = () => {
                 >
                   <AiFillDelete className="w-8 h-8 text-darkslategray cursor-pointer" />
                   Excluir
-                </button>
-                <button className="cursor-pointer">
-                  <FaRegEye className="w-8 h-8 text-darkslategray" />
                 </button>
               </div>
             </div>
