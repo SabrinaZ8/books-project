@@ -50,7 +50,7 @@ export const ListBooks = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100">
       <NavBar />
-      <div className="bg-[url(../../../src/assets/background/bg-image.webp)] w-full bg-cover bg-center h-[200px]">
+      <div className="bg-[url(/images/bg-image.webp)] w-full bg-cover bg-center h-[200px]">
         <div className="bg-black/5 backdrop-blur-xs w-full h-full flex flex-col justify-center items-center p-4">
           <BookSearch />
         </div>

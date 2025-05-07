@@ -1,4 +1,3 @@
-import woman from "../../../assets/svgs/woman-reading-animate.svg";
 
 export const About = () => {
   return (
@@ -21,7 +20,7 @@ export const About = () => {
         </p>
       </div>
       <div className="w-full md:w-1/2 flex justify-center lg:justify-end">
-        <img src={woman} alt="Imagem ilustrativa de uma mulher lendo livros embaixo de uma árvore" className="w-[80%]" />
+        <img src="/svgs/woman-reading-animate.svg" alt="Imagem ilustrativa de uma mulher lendo livros embaixo de uma árvore" className="w-[80%]" />
       </div>
     </div>
   );
