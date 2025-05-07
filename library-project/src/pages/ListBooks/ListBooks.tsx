@@ -56,7 +56,7 @@ export const ListBooks = () => {
         </div>
       </div>
       <i className="font-semibold text-sm text-dimgray mt-4 w-full px-4">
-        Resultados para: {query}
+        Resultados para: {query && subject ? query + " & " + subject : query || subject } 
       </i>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10 mt-5 px-4">
         {books
