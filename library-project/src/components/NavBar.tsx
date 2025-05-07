@@ -10,7 +10,7 @@ export const NavBar = () => {
           <img
             src="/images/logo.webp"
             alt="Logo"
-            className="w-[70px] min-w-[70px] rounded-full"
+            className="w-[70px] h-[70px] min-w-[70px] rounded-full"
           />
         </div>
       </NavLink>
