@@ -24,7 +24,7 @@ export const BooksAuthor = ({ authorKey }: AuthorKeyProp) => {
     fetchBooksAuthor();
   });
   return (
-    <div className="flex my-10 overflow-x-scroll">
+    <div className="flex my-10 overflow-x-scroll py-4">
       {booksAuthor?.map((book) => (
         <div>
           <div>

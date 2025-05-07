@@ -27,7 +27,7 @@ export const WorksEditions = () => {
        fetchWorksEditions()
     }, [keyParam])
   return (
-    <div className="flex my-10">
+    <div className="flex my-10 overflow-x-scroll py-4">
     {worksEditions?.map((edition) => (
       <div>
         {edition.covers?.[0] && (
