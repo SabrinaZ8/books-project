@@ -12,7 +12,10 @@ export const ListBooks = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
   const subject = searchParams.get("subject");
+  const [page, setPage] = useState(1);
+  const [totalResults, setTotalResults] = useState(0);
 
+  const limit = 20; 
   const { addFavorite } = useFavoritesContext();
 
   useEffect(() => {
@@ -23,21 +26,29 @@ export const ListBooks = () => {
         if (query && subject) {
           url = `https://openlibrary.org/search.json?q=subject:${subject}+${encodeURIComponent(
             query
-          )}`;
+          )}&page=${page}&limit=${limit}`;
         } else if (query) {
           url = `https://openlibrary.org/search.json?q=${encodeURIComponent(
             query
-          )}`;
+          )}&page=${page}&limit=${limit}`;
         } else if (subject) {
           url = `https://openlibrary.org/search.json?subject=${encodeURIComponent(
             subject
-          )}`;
+          )}&page=${page}&limit=${limit}`;
         }
 
         if (!url) return; //vim aqui dps e retornar um erro
 
         const response = await axios.get(url);
-        setBooks(response.data.docs);
+
+
+        setBooks((prev) => {
+          const currentIds = new Set(prev.map(book => book.key));
+          const newBooks = response.data.docs.filter((book:Book) => !currentIds.has(book.key));
+          return [...prev, ...newBooks];
+        });
+        setTotalResults(response.data.numFound);
+
         console.log(response.data);
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
@@ -45,7 +56,17 @@ export const ListBooks = () => {
     };
 
     fetchBooks();
-  }, [query, subject]);
+  }, [page, query, subject]);
+
+  useEffect(() => {
+    const resetBooks = () => {
+      setBooks([])
+    }
+    resetBooks()
+  }, [query, subject])
+
+  const hasMore = books.length < totalResults;
+
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100">
@@ -68,7 +89,6 @@ export const ListBooks = () => {
               state={{ book }}
             >
               <div
-                key={book.key}
                 className="shadow-xl p-2 cursor-pointer bg-white hover:bg-gainsboro transition-bg duration-300 relative w-full h-full"
               >
                 <div className="absolute top-0 right-0 m-3 flex items-center cursor-pointer">
@@ -108,6 +128,12 @@ export const ListBooks = () => {
             </Link>
           ))}
       </div>
+      <button 
+        onClick={() => setPage((prev) => prev + 1)}
+        disabled={!hasMore}
+        className={`px-5 py-2 rounded-md mb-20  ${hasMore ? "bg-orangered text-white" : "bg-gray-400 text-black"}`}>
+        Ver mais
+      </button>
     </div>
   );
 };
