@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Favorites } from '../pages/Favorites/Favorites';
 import { Home } from '../pages/Home/Home';
 import { ListBooks } from '../pages/ListBooks/ListBooks';
-import { BookPage } from '../BookPage/BookPage';
+import { BookPage } from '../pages/BookPage/BookPage';
 
 export const AppRoutes = () => {
     return (

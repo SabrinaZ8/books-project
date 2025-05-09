@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../../components/NavBar";
 import { BookDetails } from "./components/BookDetails";
 import { AuthorDetails } from "./components/AuthorDetails";
 import { WorksEditions } from "./components/WorksEditions";

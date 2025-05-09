@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Book } from "../type"
 import axios from "axios";
-import { useFavoritesContext } from "../../hooks/useFavoriteContext";
+import { useFavoritesContext } from "../../../hooks/useFavoriteContext";
 import { useParams } from "react-router-dom";
 
 type BookDetailsProps = {
