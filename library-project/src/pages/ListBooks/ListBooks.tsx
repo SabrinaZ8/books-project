@@ -59,10 +59,8 @@ export const ListBooks = () => {
   }, [page, query, subject]);
 
   useEffect(() => {
-    const resetBooks = () => {
       setBooks([])
-    }
-    resetBooks()
+      setPage(1);
   }, [query, subject])
 
   const hasMore = books.length < totalResults;
