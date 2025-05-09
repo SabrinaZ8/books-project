@@ -6,6 +6,7 @@ import { NavBar } from "../../components/NavBar";
 import { Book } from "../../types";
 import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { BsBookmarkStarFill } from "react-icons/bs";
+import { toast } from 'react-toastify';
 
 export const ListBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -95,6 +96,7 @@ export const ListBooks = () => {
                     className="cursor-pointer"
                     onClick={(e) => {
                       addFavorite(book);
+                      toast.success('Adicionado aos favoritos!');
                       e.stopPropagation();
                       e.preventDefault();
                     }}
