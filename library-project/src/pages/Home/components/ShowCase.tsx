@@ -4,12 +4,14 @@ import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
 import { Book } from "../../../types";
 import { useWidth } from "../../../hooks/useWidth";
+import { Link } from "react-router-dom";
 
  export const ShowCase = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [translate, setTranslate] = useState(0);
   const [slideSize, setSlideSize] = useState(0)
   const [amountToShow, setAmountToShow] = useState(1)
+  
 
   const width = useWidth()
 
@@ -48,7 +50,6 @@ import { useWidth } from "../../../hooks/useWidth";
         const response = await axios.get(
           `https://openlibrary.org/search.json?q=harry&limit=12`
         );
-        console.log(response);
         setBooks(response.data.docs);
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
@@ -56,7 +57,6 @@ import { useWidth } from "../../../hooks/useWidth";
     };
     fetchBooks();
   }, []);
-console.log("Renderizou")
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-200px)] p-1 sm:p-10 flex-col lg:flex-row">
       <div className="my-7 xl:p-16 2xl:p-20 max-lg:text-center">
@@ -70,7 +70,7 @@ console.log("Renderizou")
         minWidth: `${slideSize}px`,
         width: `${slideSize}px`,
       }}>
-        <div className="absolute z-10 inset-0 flex justify-between items-center ">
+        <div className="absolute pointer-events-none z-10 inset-0 flex justify-between items-center ">
           <SlArrowLeft className="arrows-show" onClick={previousArrow} />
           <SlArrowRight className="arrows-show" onClick={nextArrow} />
         </div>
@@ -79,7 +79,7 @@ console.log("Renderizou")
           style={{ transform: `translateX(-${translate}px)` }}
         >
           {books.map((book) => (
-            <div
+            <Link to={`/book/${book.key.replace('/works/', '')}`}
               key={book.key}
               className=" p-2 cursor-pointer transition-bg duration-300 w-[330px] h-[550px] mx-2"
             >
@@ -91,7 +91,7 @@ console.log("Renderizou")
               />
               <h3 className="font-semibold">{book.title}</h3>
               <p className="text-sm">{book.author_name}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
