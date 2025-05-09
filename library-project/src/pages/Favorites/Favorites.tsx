@@ -3,6 +3,7 @@ import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 import { useFavoritesContext } from "../../hooks/useFavoriteContext";
 import { AiFillDelete } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 export const Favorites = () => {
   const { favorites, removeFavorite } = useFavoritesContext();
@@ -39,6 +40,7 @@ export const Favorites = () => {
                     removeFavorite(favorite.key)
                     e.stopPropagation();
                     e.preventDefault()
+                    toast.warn(`Livro ${favorite.title} removido dos favoritos!`)
                   }} 
                   className="flex items-center justify-between mr-10 font-semibold cursor-pointer"
                 >

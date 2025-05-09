@@ -96,7 +96,7 @@ export const ListBooks = () => {
                     className="cursor-pointer"
                     onClick={(e) => {
                       addFavorite(book);
-                      toast.success('Adicionado aos favoritos!');
+                      toast.success(`Livro ${book.title} adicionado aos favoritos!`);
                       e.stopPropagation();
                       e.preventDefault();
                     }}
