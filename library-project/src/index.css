@@ -31,11 +31,11 @@
 }
 
 .section-style {
-    @apply flex flex-col justify-center p-0 lg:p-10 m-1 lg:m-5
+    @apply flex flex-col justify-center p-0 lg:p-10 mx-1 lg:mx-5 my-8
 }
 
 .arrows-show-more {
-    @apply bg-paleturquoise text-dimgray w-10 h-10 p-2 mx-2
+    @apply bg-paleturquoise text-dimgray w-10 h-10 p-2 mx-2 
 }
 
 .ul-footer li{
