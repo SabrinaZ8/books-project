@@ -23,7 +23,8 @@ export const BookPage = () => {
           <hr className="text-gray-300" />
         </div>
 
-        <AuthorDetails authorKey={authorKey} setAuthorName={setAuthorName}/>
+
+        {authorKey ? <AuthorDetails authorKey={authorKey} setAuthorName={setAuthorName}/> : "Autor não encontrado"}
 
         <div>
           <h2 className="text-xl tracking-widest">
