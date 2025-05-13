@@ -14,7 +14,7 @@ export const BookPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="p-10">
+      <div className="p-3 sm:p-10">
 
       {keyParam ? <BookDetails setAuthorKey={setAuthorKey} /> : <p>Livro não encontrado</p>}
 
