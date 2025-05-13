@@ -21,7 +21,6 @@ export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
           `https://openlibrary.org/works/${keyParam}.json?limit=10`
         );
         setBookDetails(response.data);
-        console.log(response.data);
         setAuthorKey(
           response.data.authors[0].author.key.replace("/authors/", "")
         );
@@ -32,7 +31,6 @@ export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
 
     fetchBooksDeatails();
   }, [keyParam, setAuthorKey]);
-  console.log(bookDetails);
   return (
     <div className="flex flex-row-reverse justify-end my-10 max-md:flex-col">
       <div className="sm:mx-5">

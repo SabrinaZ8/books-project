@@ -18,7 +18,6 @@ export const FavoriteProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if(isInitialized) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    console.log("local")
     }
   }, [favorites, isInitialized]);
 

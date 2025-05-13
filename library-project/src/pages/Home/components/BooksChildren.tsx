@@ -52,7 +52,6 @@ export const BooksChildren = () => {
           `https://openlibrary.org/search.json?q=children&page=${count}&limit=${limit}`
         );
         setBooks(response.data.docs);
-        console.log(response.data.docs)
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
       }

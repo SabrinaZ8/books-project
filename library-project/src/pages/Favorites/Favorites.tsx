@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 
 export const Favorites = () => {
   const { favorites, removeFavorite } = useFavoritesContext();
-  console.log(favorites);
   return (
     <div className="min-h-screen">
       <NavBar />

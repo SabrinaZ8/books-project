@@ -21,7 +21,6 @@ export const TopAuthor = () => {
           })
         );
         setAuthors(responses);
-        console.log(responses);
       } catch (error) {
         console.error("Erro ao buscar autores:", error);
       }

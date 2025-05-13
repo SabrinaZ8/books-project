@@ -34,7 +34,6 @@ import { Link } from "react-router-dom";
 
     if (translate < translateMax) {
       setTranslate((prev) => prev + slideSize);
-      console.log("Clicou no nextArrow", translate);
     }
   }
 

@@ -49,8 +49,6 @@ export const ListBooks = () => {
           return [...prev, ...newBooks];
         });
         setTotalResults(response.data.numFound);
-
-        console.log(response.data);
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
       }

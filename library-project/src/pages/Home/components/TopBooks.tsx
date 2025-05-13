@@ -13,7 +13,6 @@ export const TopBooks = () => {
           `https://openlibrary.org/search.json?q=*&sort=editions&limit=6`
         );
         setBooks(response.data.docs);
-        console.log(response.data.docs);
       } catch (error) {
         console.error("Erro ao buscar livros:", error);
       }
