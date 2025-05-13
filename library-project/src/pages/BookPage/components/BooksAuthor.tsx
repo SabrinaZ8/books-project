@@ -15,18 +15,26 @@ export const BooksAuthor = ({ authorKey }: AuthorKeyProp) => {
   const [booksAuthor, setBooksAuthor] = useState<BooksAuthorType[]>([]);
 
   useEffect(() => {
-    const fetchBooksAuthor = async () => {
+      if (!authorKey) return;
+
+  const fetchBooksAuthor = async () => {
+    try {
       const response = await axios.get(
         `https://openlibrary.org/authors/${authorKey}/works.json`
       );
       setBooksAuthor(response.data.entries);
-    };
-    fetchBooksAuthor();
-  });
+    } catch (error) {
+      console.error("Erro ao buscar livros do autor:", error);
+    }
+  };
+
+  fetchBooksAuthor();
+}, [authorKey]);
+
   return (
     <div className="flex my-10 overflow-x-scroll py-4">
       {booksAuthor?.map((book) => (
-        <div>
+        <div key={book.key}>
           <div>
             {book.covers?.[0] && (
               <img

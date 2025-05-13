@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 type BookDetailsProps = {
-  setAuthorKey: React.Dispatch<React.SetStateAction<string>>;
+  setAuthorKey: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
@@ -31,6 +31,7 @@ export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
 
     fetchBooksDeatails();
   }, [keyParam, setAuthorKey]);
+
   return (
     <div className="flex flex-row-reverse justify-end my-10 max-md:flex-col">
       <div className="sm:mx-5">

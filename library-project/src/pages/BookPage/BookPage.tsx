@@ -8,9 +8,9 @@ import { BooksAuthor } from "./components/BooksAuthor";
 
 export const BookPage = () => {
   const [authorName, setAuthorName] = useState("");
-  const [authorKey, setAuthorKey] = useState("")
+  const [authorKey, setAuthorKey] = useState<string | null>(null)
   const { keyParam } = useParams();
-
+  
   return (
     <div className="">
       <NavBar />
@@ -24,8 +24,11 @@ export const BookPage = () => {
         </div>
 
 
-        {authorKey ? <AuthorDetails authorKey={authorKey} setAuthorName={setAuthorName}/> : "Autor não encontrado"}
-
+{authorKey !== null ? (
+  <AuthorDetails key={authorKey} authorKey={authorKey} setAuthorName={setAuthorName} />
+) : (
+  <p>Autor não encontrado</p>
+)}
         <div>
           <h2 className="text-xl tracking-widest">
             Mais edições do livro
@@ -42,8 +45,11 @@ export const BookPage = () => {
           <hr className="text-gray-300" />
         </div>
 
-        {authorKey ? <BooksAuthor authorKey={authorKey} /> : "Livros não encontrados"}
-
+{authorKey !== null ? (
+  <BooksAuthor key={authorKey} authorKey={authorKey} />
+) : (
+  <p>Livros não encontrados</p>
+)}
       </div>
     </div>
   );
