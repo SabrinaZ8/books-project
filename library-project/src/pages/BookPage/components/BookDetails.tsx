@@ -34,7 +34,9 @@ export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
   return (
     <div className="flex flex-row-reverse justify-end my-10 max-md:flex-col">
       <div className="sm:mx-5">
-        <h2 className="text-4xl md:text-5xl mb-10 max-md:text-center">{bookDetails?.title}</h2>
+        <h2 className="text-4xl md:text-5xl mb-10 max-md:text-center">
+          {bookDetails?.title}
+        </h2>
         <p>
           {typeof bookDetails?.description === "string"
             ? bookDetails.description
@@ -54,11 +56,13 @@ export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
 
       <div className="flex flex-col justify-center items-center">
         <div>
-          <img
-            src={`https://covers.openlibrary.org/b/id/${bookDetails?.covers[0]}-L.jpg`}
-            className="shadow-md/70 w-[200px] min-w-[200px]"
-            alt={`Imagem da capa do livro ${bookDetails?.title}`}
-          />
+          {bookDetails?.covers && bookDetails.covers[0] && (
+            <img
+              src={`https://covers.openlibrary.org/b/id/${bookDetails.covers[0]}-L.jpg`}
+              className="shadow-md/70 w-[200px] min-w-[200px]"
+              alt={`Imagem da capa do livro ${bookDetails.title}`}
+            />
+          )}
         </div>
 
         <div className="w-[200px] my-5">
