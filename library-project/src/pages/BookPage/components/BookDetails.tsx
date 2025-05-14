@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import { Book } from "../type";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useFavoritesContext } from "../../../hooks/useFavoriteContext";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-type BookDetailsProps = {
-  setAuthorKey: React.Dispatch<React.SetStateAction<string | null>>;
+type AuthorErrorType = {
+  hasError: boolean;
+  message: string;
 };
 
-export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
+type BookDetailsProps = {
+  setAuthorKey: React.Dispatch<React.SetStateAction<string | null>>;
+  setError: React.Dispatch<React.SetStateAction<AuthorErrorType>>;
+};
+
+export const BookDetails = ({ setAuthorKey, setError }: BookDetailsProps) => {
   const [bookDetails, setBookDetails] = useState<Book | null>(null);
   const { addFavorite } = useFavoritesContext();
   const { keyParam } = useParams();
@@ -18,19 +24,30 @@ export const BookDetails = ({ setAuthorKey }: BookDetailsProps) => {
     const fetchBooksDeatails = async () => {
       try {
         const response = await axios.get(
-          `https://openlibrary.org/works/${keyParam}.json?limit=10`
+          `https://openlibrary.org/works/${keyParam}.json`
         );
         setBookDetails(response.data);
         setAuthorKey(
           response.data.authors[0].author.key.replace("/authors/", "")
         );
-      } catch (error) {
-        console.error("Erro ao buscar detalhes do livro:", error);
+      } catch (e) {
+        const error = e as AxiosError;
+        if (error.response?.status === 404) {
+          setError({
+            hasError: true,
+            message: "Livro não encontrado.",
+          });
+        } else {
+          setError({
+            hasError: true,
+            message: "Ocorreu um erro ao carregar os dados do livro. Tente novamente mais tarde.",
+          });
+        }
       }
     };
 
     fetchBooksDeatails();
-  }, [keyParam, setAuthorKey]);
+  }, [keyParam, setError, setAuthorKey]);
 
   return (
     <div className="flex flex-row-reverse justify-end my-10 max-md:flex-col">
