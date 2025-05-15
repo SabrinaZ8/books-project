@@ -7,13 +7,28 @@ import { FindCategory } from "./components/FindCategory";
 import { ShowCase } from "./components/ShowCase";
 import { TopAuthor } from "./components/TopAuthor";
 import { TopBooks } from "./components/TopBooks";
+import imgBgMobile from "/images/bg-hero-mobile.webp"
+import imgBgDekstop from "/images/bg-hero.webp"
 
 export const Home = () => {
   return (
-    <div className="bg-[url()] bg-no-repeat bg-contain">
+    <div>
       <NavBar />
-
-      <section className="h-[calc(100vh-105px)] max-h-[900px] bg-hero">
+      <section className="h-[calc(100vh-105px)] max-h-[900px] relative">
+        <picture>
+          <source
+            media="(min-width: 641px)"
+            srcSet={imgBgDekstop}
+            type="image/jpeg"
+          />
+          <img
+            src={imgBgMobile}
+            alt="Background"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
         <div className="relative flex flex-col justify-center items-center h-full text-center px-1">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold mb-3">
             buscador de livros
@@ -48,7 +63,11 @@ export const Home = () => {
       <section>
         <About />
       </section>
-      <img src="/svgs/wavesOpacity.svg" alt="" className="w-full max-sm:h-[50px] max-lg:h-[100px] bg-wheat rotate-180 object-cover" />
+      <img
+        src="/svgs/wavesOpacity.svg"
+        alt=""
+        className="w-full max-sm:h-[50px] max-lg:h-[100px] bg-wheat rotate-180 object-cover"
+      />
       <Footer />
     </div>
   );
