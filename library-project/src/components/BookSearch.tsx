@@ -15,7 +15,7 @@ export const BookSearch = () => {
   }
 
   return (
-    <div className="flex mt-14 w-11/12 md:w-3/4 xl:w-1/2 justify-center flex-col items-center">
+    <div className="flex mt-10 w-11/12 md:w-3/4 xl:w-1/2 justify-center flex-col items-center">
       <form
         onSubmit={(e) => onSubmit(e)}
         className="flex w-full justify-center"

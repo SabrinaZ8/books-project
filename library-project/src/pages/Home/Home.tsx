@@ -33,7 +33,9 @@ export const Home = () => {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold mb-3">
             buscador de livros
           </h1>
-          <p className="text-xl md:text-2xl">
+          <p className="text-xl md:text-2xl"> As informações exibidas neste site são obtidas através da API da Open Library.</p>
+          <p className="text-xl md:text-2xl underline decoration-6 underline-offset-6 decoration-wheat
+">
             procure por livros, autores, categorias
           </p>
           <BookSearch />
