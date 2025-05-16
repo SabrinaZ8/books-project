@@ -28,7 +28,7 @@ export const BooksChildren = () => {
         if (elementoRef.current) {
           const width = elementoRef.current.getBoundingClientRect().width;
           if (width < 640) {
-            setLimit(Math.floor(width / 170) * 2);
+            setLimit(Math.floor(width / 170));
           } else {
             setLimit(Math.floor(width / 200) * 2);
           }
@@ -69,7 +69,7 @@ export const BooksChildren = () => {
         </div>
       </div>
       <div
-        className="grid max-sm:grid-rows-1 grid-rows-2 grid-flow-col gap-1 sm:gap-4 mb-10 mt-5 px-1 sm:x-4 overflow-hidden max-sm:overflow-x-auto"
+        className="grid max-sm:grid-rows-1 grid-rows-2 grid-flow-col gap-1 sm:gap-4 mb-10 mt-5 px-1 sm:x-4 overflow-hidden"
         ref={elementoRef}
       >
         {books
@@ -81,7 +81,7 @@ export const BooksChildren = () => {
             >
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-                className={`h-[280px] object-cover object-left shadow-md/70`}
+                className={` object-contain object-center shadow-md/70`}
                 alt={`Imagem da capa do livro ${book.title}`}
               />
               <h3 className="font-semibold">{book.title}</h3>
