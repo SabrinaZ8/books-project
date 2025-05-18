@@ -31,7 +31,7 @@ export const Home = () => {
         </picture>
         <div className="relative flex flex-col justify-center items-center h-full text-center px-1">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-playfair font-semibold mb-3">
-            buscador de livros
+            Buscador de Livros
           </h1>
           <p className="text-xl md:text-2xl"> As informações exibidas neste site são obtidas através da API da Open Library.</p>
           <p className="text-xl md:text-2xl underline decoration-6 underline-offset-6 decoration-wheat
