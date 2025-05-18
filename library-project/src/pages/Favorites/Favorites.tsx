@@ -16,6 +16,16 @@ export const Favorites = () => {
         </h1>
       </div>
       <div className="py-10 flex flex-wrap min-h-[calc(100vh-300px)]">
+        {favorites.length === 0 && (
+          <div className="flex flex-col items-center justify-center w-full">
+            <h2 className="text-3xl font-semibold text-center">
+              Você ainda não tem livros favoritos!
+            </h2>
+            <p className="text-lg text-center mt-5">
+              Adicione livros à sua lista de favoritos para vê-los aqui.
+            </p>
+          </div>
+        )}
         {favorites.map((favorite) => (
           <Link to={`/book/${favorite.key.replace("/works/", "")}`} key={favorite.key}  className="mx-1 lg:mx-5 p-2 flex flex-1 w-full sm:max-w-[500px]">
             <div className="flex items-start justify-start">
