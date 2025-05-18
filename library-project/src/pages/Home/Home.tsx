@@ -68,7 +68,7 @@ export const Home = () => {
       <img
         src="/svgs/wavesOpacity.svg"
         alt=""
-        className="w-full max-sm:h-[50px] max-lg:h-[100px] bg-wheat rotate-180 object-cover"
+        className="w-full max-sm:h-[50px] max-lg:h-[100px] bg-orange-100 rotate-180 object-cover"
       />
       <Footer />
     </div>
