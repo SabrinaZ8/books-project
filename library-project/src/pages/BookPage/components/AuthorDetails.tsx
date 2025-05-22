@@ -56,7 +56,7 @@ export const AuthorDetails = ({
           <img
             src={`https://covers.openlibrary.org/a/id/${authorDetails.photos[0]}-L.jpg`}
             alt="Imagem do autor"
-            className="w-[300px] float-right mx-2 object-cover"
+            className="w-[300px] sm:float-right sm:mx-2 object-cover"
           />
         )}
         <div>
@@ -65,7 +65,7 @@ export const AuthorDetails = ({
               ? authorDetails.bio
               : authorDetails?.bio?.value}
           </p>
-          <div className="inline-flex justify-start w-1/2 my-4">
+          <div className="inline-flex justify-start w-full md:w-1/2 my-4">
             <div className="author-infos-box">
               <h3>Aniversário</h3>
               <p>
