@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <div>
       <NavBar />
-      <section className="h-[calc(100vh-105px)] max-h-[900px] relative">
+      <section className="h-[calc(100vh-105px)] relative">
         <picture>
           <source
             media="(min-width: 641px)"
@@ -24,7 +24,7 @@ export const Home = () => {
           <img
             src={imgBgMobile}
             alt="Background"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute -z-20 inset-0 w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
           />
@@ -39,7 +39,7 @@ export const Home = () => {
             procure por livros, autores, categorias
           </p>
           <BookSearch />
-          <div className="absolute bottom-4 right-4">
+          <div className="absolute -z-10 bottom-4 right-4">
             <img
               src="/images/books-bg.webp"
               alt=""
