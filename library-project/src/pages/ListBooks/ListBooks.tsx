@@ -134,7 +134,7 @@ export const ListBooks = () => {
                       e.preventDefault();
                     }}
                   >
-                    <BsBookmarkStarFill />
+                    <BsBookmarkStarFill aria-label="Favoritar"/>
                   </button>
                 </div>
 
