@@ -50,7 +50,7 @@
     @apply bg-gainsboro mr-4 py-3 px-5 
 }
 .author-infos-box h3{
-    @apply text-xl font-semibold
+    @apply text-lg sm:text-xl font-semibold
 }
 .arrows-show {
     @apply bg-orangered w-10 h-10 p-2 rounded-full cursor-pointer text-white shadow-md/50 pointer-events-auto

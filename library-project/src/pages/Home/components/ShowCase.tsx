@@ -17,9 +17,12 @@ import { Link } from "react-router-dom";
 
   useEffect(() => {
     setTranslate(0)
-    if(width < 768) {
+    if(width < 640) {
       setSlideSize(246)
       setAmountToShow(1)
+    } else if ( width < 768) {
+      setSlideSize(492)
+      setAmountToShow(2)
     } else if( width <= 1536) {
       setSlideSize(692)
       setAmountToShow(2)
@@ -74,18 +77,18 @@ import { Link } from "react-router-dom";
           <SlArrowRight className="arrows-show" onClick={nextArrow} />
         </div>
         <div
-          className={`flex justify-center items-center -translate-x-[${translate?.toString()}] transition-transform duration-300`}
+          className={`flex justify-center -translate-x-[${translate?.toString()}] transition-transform duration-300`}
           style={{ transform: `translateX(-${translate}px)` }}
         >
           {books.map((book) => (
             <Link to={`/book/${book.key.replace('/works/', '')}`}
               key={book.key}
-              className=" p-2 cursor-pointer transition-bg duration-300 w-[230px] min-h-[400px] sm:w-[330px] sm:min-h-[550px] mx-2"
+              className=" p-2 cursor-pointer transition-bg duration-300 w-[230px] min-h-[400px] md:w-[330px] md:min-h-[550px] mx-2"
             >
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                 alt={book.title}
-                className="shadow-md/70 w-[230px] h-[330px] sm:w-[330px] sm:h-[500px] object-contain"
+                className="shadow-md/70 w-[230px] h-[330px] md:w-[330px] md:h-[500px] object-contain"
                 loading="lazy"
               />
               <h3 className="font-semibold">{book.title}</h3>
