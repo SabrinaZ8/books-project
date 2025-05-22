@@ -43,7 +43,7 @@ export const Home = () => {
             <img
               src="/images/books-bg.webp"
               alt=""
-              className="w-40 h-40 sm:h-80 sm:w-80 object-contain"
+              className="h-40 sm:h-80 object-contain"
             />
           </div>
         </div>
