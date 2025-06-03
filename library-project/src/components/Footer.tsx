@@ -31,7 +31,7 @@ export const Footer = () => {
             <li>
               <Link to="/favorites">Favoritos</Link>
             </li>
-            <li>Creditos</li>
+            <li><Link to="/credits">Créditos</Link></li>
             <li>
               <a
                 href="https://openlibrary.org"

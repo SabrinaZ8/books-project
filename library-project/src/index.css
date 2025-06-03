@@ -59,5 +59,7 @@
 .search-input {
     @apply bg-orangered text-white rounded-sm px-1 sm:px-4 focus:outline-0
 }
-
+.credits-a {
+    @apply underline text-orangered
+}
 
