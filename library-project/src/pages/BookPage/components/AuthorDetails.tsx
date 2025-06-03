@@ -1,17 +1,7 @@
 import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { Author } from "../type";
-
-type AuthorErrorType = {
-  hasError: boolean;
-  message: string;
-};
-
-type authorKeyType = {
-  authorKey: string;
-  setAuthorName: React.Dispatch<React.SetStateAction<string>>;
-  setError: React.Dispatch<React.SetStateAction<AuthorErrorType>>;
-};
+import { authorKeyType } from "../type";
 
 export const AuthorDetails = ({
   authorKey,

@@ -1,15 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-type AuthorKeyProp = {
-  authorKey: string;
-};
-
-type BooksAuthorType = {
-  key: string;
-  title: string;
-  covers: number[];
-};
+import { BooksAuthorType } from "../type";
+import { AuthorKeyProp } from "../type";
 
 export const BooksAuthor = ({ authorKey }: AuthorKeyProp) => {
   const [booksAuthor, setBooksAuthor] = useState<BooksAuthorType[]>([]);

@@ -1,13 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { EditionsType } from "../type";
 
-
-
-  type EditionsType = {
-    covers: number[];    
-    title: string;
-  };
 export const WorksEditions = () => {
 
     const [worksEditions, setWorksEditions] = useState<EditionsType[]>([]);

@@ -4,16 +4,7 @@ import axios, { AxiosError } from "axios";
 import { useFavoritesContext } from "../../../hooks/useFavoriteContext";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-
-type AuthorErrorType = {
-  hasError: boolean;
-  message: string;
-};
-
-type BookDetailsProps = {
-  setAuthorKey: React.Dispatch<React.SetStateAction<string | null>>;
-  setError: React.Dispatch<React.SetStateAction<AuthorErrorType>>;
-};
+import { BookDetailsProps } from "../type";
 
 export const BookDetails = ({ setAuthorKey, setError }: BookDetailsProps) => {
   const [bookDetails, setBookDetails] = useState<Book | null>(null);
