@@ -5,6 +5,7 @@ import { ListBooks } from '../pages/ListBooks/ListBooks';
 import { BookPage } from '../pages/BookPage/BookPage';
 import ScrollToTop from '../components/ScrollToTop';
 import { Credits } from '../pages/Credits/Credits';
+import { ErrorPage } from '../pages/ErrorPage/ErrorPage';
 
 export const AppRoutes = () => {
     return (
@@ -16,6 +17,7 @@ export const AppRoutes = () => {
             <Route path="/book/:keyParam" element={<BookPage />} />
             <Route path="/listbooks" element={<ListBooks />} />
             <Route path="/credits" element={<Credits />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
       </BrowserRouter>
     );
