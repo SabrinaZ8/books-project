@@ -60,7 +60,7 @@ import { Link } from "react-router-dom";
     fetchBooks();
   }, []);
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-200px)] p-1 sm:p-10 flex-col lg:flex-row">
+    <section className="flex justify-center items-center min-h-[calc(100vh-200px)] p-1 sm:p-10 flex-col lg:flex-row">
       <div className="my-7 xl:p-16 2xl:p-20 max-lg:text-center">
         <h2 className="italic text-4xl sm:text-5xl md:text-6xl font-semibold font-playfair">Uma Viagem à Hogwarts</h2>
         <p className="font-playfair italic text-3xl">
@@ -97,6 +97,6 @@ import { Link } from "react-router-dom";
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -60,7 +60,7 @@ export const BooksChildren = () => {
   }, [count, limit]);
 
   return (
-    <div>
+    <div className="section-style">
       <div className="flex items-center justify-between">
         <h2 className="title-h2">Livros para crianças</h2>
         <div className="flex items-center">

@@ -48,23 +48,21 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <section className="">
         <ShowCase />
-      </section>
+
       <section className="section-style h-[300px] lg:h-[400px]">
         <h2 className="title-h2">Encontre por categoria</h2>
         <FindCategory />
       </section>
-      <section className="section-style">
+
         <BooksChildren />
-      </section>
+
       <section className="flex my-10 justify-between sm:p-5 flex-col-reverse xl:flex-row">
         <TopBooks />
         <TopAuthor />
       </section>
-      <section>
+      
         <About />
-      </section>
       <img
         src="/svgs/wavesOpacity.svg"
         alt=""

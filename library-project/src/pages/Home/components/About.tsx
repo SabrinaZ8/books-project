@@ -1,7 +1,7 @@
 
 export const About = () => {
   return (
-    <div className="flex justify-center items-center bg-orange-100 p-10 flex-col lg:flex-row">
+    <section className="flex justify-center items-center bg-orange-100 p-10 flex-col lg:flex-row">
       <div className={`lg:w-1/2`}>
         <h2 className="title-h2 my-10" translate="no"> O que é a Open Library?</h2>
         <p className="italic">
@@ -22,6 +22,6 @@ export const About = () => {
       <div className="w-full md:w-1/2 flex justify-center lg:justify-end">
         <img src="/svgs/woman-reading-animate.svg" alt="Imagem ilustrativa de uma mulher lendo livros embaixo de uma árvore" className="w-[80%]" />
       </div>
-    </div>
+    </section>
   );
 };
